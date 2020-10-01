@@ -1,0 +1,41 @@
+1. Semester
+Anerkannt - Programmierung 1
+Belegt - Mathematik 1 (I)
+Belegt - Orientierung und Methoden 1. Teil
+Belegt - Elektrotechnische-physikalische Grundlagen für TI
+Belegt - Grundlagen Technische Informatik
+
+2. Semester
+Programmierung 2
+Anerkannt - Mathematik 2 (I)
+Kommunikationsnetze
+Anerkannt - Algorithmen und Datenstrukturen
+Anerkannt? - Rechnerorganisation
+Orientierung und Methoden 2.Teil
+
+3. Semester
+Anerkannt - Betriebssysteme
+Anerkannt - Mathematik 3 (I)
+Belegt - Programmierung 3 (TI)
+Anerkannt - Datenbanken
+Anerkannt? - Computerarchitektur
+Belegt - Betriebswirtschaftslehre - Überfachliches Wahlpflichtmodul (gemäß Wahlmodulekatalog)
+
+4. Semester
+Objektorientierte Analyse und Design
+Anerkannt - Theoretische Informatik
+IT-Sicherheit
+Anerkannt - Verteilte Systeme
+Modellbildung und Simulation (I)
+Wahlpflichtmodul (gemäß Anlage 1.3 der Studienordnung)
+
+5. Semester
+Software Architektur - Konzepte und Anwendungen
+Software Engineering Projekt
+Systems Engineering
+Embedded Systems
+Wahlpflichtmodul (gemäß Anlage 1.3 der Studienordnung)
+
+6. Semester
+Projekt und Projektmanagement
+Bachelorarbeit und Kolloquium
