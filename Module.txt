@@ -1,13 +1,13 @@
 1. Semester
-Anerkannt - Programmierung 1
-Belegt - Mathematik 1 (I)
-Belegt - Orientierung und Methoden 1. Teil
-Belegt - Elektrotechnische-physikalische Grundlagen für TI
-Belegt - Grundlagen Technische Informatik
+Anerkannt - Programmierung 1 10
+Belegt - Mathematik 1 (I) 7,5
+Belegt - Orientierung und Methoden 1. Teil 5
+Belegt - Elektrotechnische-physikalische Grundlagen für TI 5
+Belegt - Grundlagen Technische Informatik 5
 
 2. Semester
 Programmierung 2
-Anerkannt - Mathematik 2 (I)
+Anerkannt - Mathematik 2 (I) 7,5
 Kommunikationsnetze
 Anerkannt - Algorithmen und Datenstrukturen
 Anerkannt? - Rechnerorganisation
@@ -16,10 +16,10 @@ Orientierung und Methoden 2.Teil
 3. Semester
 Anerkannt - Betriebssysteme
 Anerkannt - Mathematik 3 (I)
-Belegt - Programmierung 3 (TI)
+Programmierung 3 (TI)
 Anerkannt - Datenbanken
 Anerkannt? - Computerarchitektur
-Belegt - Betriebswirtschaftslehre - Überfachliches Wahlpflichtmodul (gemäß Wahlmodulekatalog)
+Betriebswirtschaftslehre - Überfachliches Wahlpflichtmodul (gemäß Wahlmodulekatalog)
 
 4. Semester
 Objektorientierte Analyse und Design
