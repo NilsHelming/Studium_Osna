@@ -1,0 +1,347 @@
+\documentclass[]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{%
+	ngerman,
+	ae,
+	times,  %% hier kann man die Schriftart einstellen
+	graphicx,
+	url,
+	scrlayer-scrpage,
+	lastpage,
+	mathtools,
+	geometry,
+	multicol,
+	cancel,
+	xcolor,
+	nicematrix,
+	xfrac,
+	tikz,
+	pgfplots,
+	amsmath}
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{datavisualization.formats.functions}
+\usetikzlibrary{intersections}
+\pgfplotsset{compat=1.17}
+\newcommand{\del}[1]{\cancel{~#1~}}
+\NiceMatrixOptions{ last-col,code-for-last-col = \color{blue}\scriptstyle,light-syntax}
+\newlength\dlf
+\newcommand\alignedhighlight[3]{
+  % #1 = color
+  % #2 = before alignment
+  % #3 = after alignment
+  &
+  \begingroup
+  \settowidth\dlf{$\displaystyle #2$}
+  \addtolength\dlf{\fboxsep+\fboxrule}
+  \hspace{-\dlf}
+  \fcolorbox{#1}{#1}{$\displaystyle #2 #3$}
+  \endgroup
+}
+\newcommand{\reference}[1]{ \text{\small{\textcolor{blue}{(#1)}}} }
+
+\newcommand{\topic}{Mathematik 1 f"ur Informatiker}
+\newcommand{\subtopic}{"Ubungsblatt 0}
+\newcommand{\authors}{Nils Helming}
+
+%Head and Footnotes
+\setlength{\headheight}{2.1\baselineskip} %baselineskip = minimum distance bbetween the bottom of one line to another.
+\geometry{bottom = 3cm}
+\setlength{\headsep}{\baselineskip}
+\ihead[\topic\hrule]{\topic\hrule}
+\chead[\subtopic\\~]{\subtopic\\~}
+\ohead[\authors\\~]{\authors\\~}
+\ifoot[~]{~}
+\cfoot[~]{~}
+\ofoot[Seite \thepage~von \pageref{LastPage}]{Seite \thepage~von \pageref{LastPage}}
+
+%Paragraph spacings
+\setlength{\parindent}{0em} %em = with of an 'M'
+\setlength{\parskip}{1ex} %ex = height of an 'x'
+
+\begin{document}
+
+\section*{1. Aufgabe}
+	\begin{multicols}{2}
+		\begin{align*}
+		%x1
+			&&  x_1 &= \frac{1}{2} + \frac{1}{7} - 0,2 &&\\
+			&& &=\frac{35}{70} + \frac{10}{70} - \frac{14}{70} &&\\
+			&& &=\frac{31}{70} &&\\
+		\\%x2
+			&& x_2 &= \frac{\sqrt{75}}{5\sqrt{3}} &&\\
+			\Leftrightarrow&& {x_2}^2 &= \frac{\sqrt{75}}{5\sqrt{3}}  \frac{\sqrt{75}}{5\sqrt{3}}&&\\
+			&&  &= \frac{75}{25\cdot3}&&\\
+			&&  &= 1&&\\
+		\\%a
+			&& a&= \frac{\frac{1}{8}+\frac{1}{6}}{\frac{3}{4}+\frac{1}{5}} &&\\
+			&& &= \frac{\frac{6}{48}+\frac{8}{48}}{\frac{15}{20}+\frac{4}{20}} &&\\
+			&& &= \frac{\frac{14}{48}}{\frac{19}{20}}&&\\
+			&& &= \frac{14}{48} \cdot \frac{20}{19}&&\\
+			&& &= \frac{280}{912}&&\\
+			&& &= \frac{35}{114}&&\\
+		\end{align*}
+		\begin{align*}
+			\\%b
+				&& b&= \sqrt{16+9}&&\\
+				&& &= \sqrt{25}&&\\
+				&& &= 5&&\\
+			\\%z
+				&& z&= \sqrt{10201} &&\\
+				&& &= 101&&\\
+		\\%y
+			&& y&= \sqrt{2} (\sqrt{8} + \sqrt{72} + \sqrt{18})&&\\
+			&& &= \sqrt{2} (\sqrt{2^2 \cdot 2} + \sqrt{2^2 \cdot 18} - \sqrt{18}) &&\\
+			&& &= \sqrt{2} (2\sqrt{2} + 2\sqrt{18} - \sqrt{18}) &&\\
+			&& &= \sqrt{2} (2\sqrt{2} + \sqrt{18}) &&\\
+			&& &= 4 + \sqrt{2} \cdot \sqrt{18} &&\\
+			&& &= 4 + \sqrt{2} \cdot \sqrt{2 \cdot 9} &&\\
+			&& &= 4 + \sqrt{2} \cdot \sqrt{2} \cdot \sqrt{9} &&\\
+			&& &= 4 + 2\cdot 3 &&\\
+			&& &= 10 &&\\
+		\end{align*}
+		% \begin{align*}
+		% \\%b
+		% 	&& &= &&\\
+		% \end{align*}
+
+	\end{multicols}
+
+\section*{2. Aufgabe}
+	\subsection*{(1)}
+		\begin{align*}
+			&&  \frac{a^2b+2ab^2+b^3}{a^2b-b^3} &= \frac{\del{b}\cdot(a^2+2ab+b^2)}{\del{b}\cdot(a^2-b^2)} &&\\
+			&& &= \frac{(a+b)^{\del{2}}}{\del{(a+b)}(a-b)} &&\\
+			&& &= \frac{a+b}{a-b} &&\\
+		\end{align*}
+	\subsection*{(2)}
+		\begin{align*}
+			&& \frac{x-y}{\sqrt{x}+\sqrt{y}} &=
+				\frac{x-y}{\sqrt{x}+\sqrt{y}} \cdot \frac{\sqrt{x}-\sqrt{y}}{\sqrt{x}-\sqrt{y}} &&\\
+			&& &= \frac{\del{(x-y)}(\sqrt{x}-\sqrt{y})}{\del{\sqrt{x}^2-\sqrt{y}^2}} &&\\
+			&& &= \sqrt{x}-\sqrt{y}&&\\
+		\end{align*}
+	\subsection*{(3)}
+		\begin{align*}
+			&& \frac{a\sqrt{b}-b\sqrt{a}}{\sqrt{a}-\sqrt{b}} &= \frac{\sqrt{a^2b}-\sqrt{b^2a}}{\sqrt{a}-\sqrt{b}}&&\\
+			&& &= \frac{\sqrt{ab}\sqrt{a}-\sqrt{ab}\sqrt{b}}{\sqrt{a}-\sqrt{b}}&&\\
+			&& &= \frac{\sqrt{ab}\del{(\sqrt{a}-\sqrt{b})}}{\del{\sqrt{a}-\sqrt{b}}}&&\\
+			&& &= \sqrt{ab}&&\\
+		\end{align*}
+	\subsection*{(4)}
+		\begin{align*}
+			&& \frac{a^2+ay}{a^2-2ay+y^2} \cdot \frac{a^2-y^2}{ay} \cdot \frac{y^2-ay}{(a+y)^2} &=
+			\frac{\textcolor{red}{a^4y^2}-a^5y \textcolor{blue}{-a^2y^4}+a^3y^3+a^3y^3\textcolor{red}{-a^4y^2}-ay^5\textcolor{blue}{+a^2y^4}}
+			{(a-y)^2 \cdot ay \cdot (a+y)^2} &&\\
+			&& &= \frac{-a^5y+2a^3y^3-ay^5}{ay(a+y)(a-y)(a+y)(a-y)}&&\\
+			&& &= \frac{-\del{ay}(a^4-2a^2y^2+y^4)}{\del{ay}(a^2-y^2)(a^2-y^2)}&&\\
+			&& &= -~\frac{a^4-2a^2y^2+y^4}{a^4-2a^2y^2+y^4}&&\\
+			&& &= -1&&\\
+		\end{align*}
+\section*{3. Aufgabe}
+\begin{samepage}
+	\begin{align*}
+		&&39x - 4y &= 3&&\\
+		&&13x + y&= -4/3&&\\
+	\end{align*}
+	\begin{align*}
+		\Rightarrow&&&\begin{pNiceArray}[columns-width=auto]{cc|c}
+			39 -4 3 {L_1 ~\gets~ -3L_2} ;
+			13 1 \frac{-4}{3} {};
+		\end{pNiceArray}&&\\
+		\Leftrightarrow&&&\begin{pNiceArray}[columns-width=auto]{cc|c}
+			0 -7 7 {} ;
+			13 1 \frac{-4}{3} {};
+		\end{pNiceArray}&&\\
+	\end{align*}
+	\nopagebreak
+	\begin{align*}
+		\Rightarrow&&-7y &= 7&&\\
+		\Leftrightarrow&& \alignedhighlight{lightgray}{y}{=-1}&&\\
+		\\
+		&& 13x+y &= -4/3&&\\
+		\Leftrightarrow && 13x-1 &= -4/3&&\\
+		\Leftrightarrow && 13x &= -1/3&&\\
+		\Leftrightarrow && \alignedhighlight{lightgray}{x}{= -1/39}&&\\
+	\end{align*}
+\end{samepage}
+\section*{4. Aufgabe}
+	\subsection*{a)}
+	\begin{samepage}
+		\begin{align*}
+			&& f(x) &= g(x) &&\\
+			\Leftrightarrow&& 2x-x^2 &= x^2-2x-4 &&\\
+			\Leftrightarrow&& 0&= 2x^2-4x-4 &&\\
+			\Leftrightarrow&& 0&= x^2-2x-2 &&\\
+			\\
+			\Rightarrow&& x_{1,2}&= - \frac{-2}{2} \pm \sqrt{\left(\frac{-2}{2}\right)^2+2} &&\\
+			&& &= 1 \pm \sqrt{3} &&\\
+		\end{align*}
+
+		$f(x)$ und $g(x)$ schneiden sich also in den Punkten $x = 1-\sqrt{3}$ und $x = 1+\sqrt{3}$.
+		\begin{center}
+			\begin{tikzpicture}
+				\begin{axis}[
+					legend pos=north east,
+					xmin=-2.5,
+					xmax=4.5,
+					ymin=-6,
+					ymax=2.5,
+					axis lines=center,
+					xlabel={$x$},
+					ylabel={$y$},
+					xlabel style={right},
+					ylabel style={above},
+					smooth,
+					no markers,
+				]
+					\addplot[red,thick,name path=f] {2*x-x^2};
+					\addplot[blue,thick,name path=g] {x^2-2*x-4};
+					\legend{$f(x)$,$g(x)$}
+
+					\fill [name intersections={of=f and g}]
+						(intersection-1) circle (1.5pt) node[left] {\scriptsize$\begin{pmatrix} 1{-}\sqrt{3}\\ -2 \end{pmatrix}$ }
+						(intersection-2) circle (1.5pt) node[right] {\scriptsize$\begin{pmatrix} 1{+}\sqrt{3}\\ -2 \end{pmatrix}$ }
+					;
+				\end{axis}
+			\end{tikzpicture}
+
+		\end{center}
+		\end{samepage}
+	\subsection*{b)}
+	\begin{samepage}
+	Sei $f(x) = a \cdot x + b$ die Gerade, welche durch die Punkte $P_1(-1,3)$ und $P_2(3,-1)$ läuft. Damit gilt:
+	\begin{align*}
+		&& f(-1) &= 3&&\\
+		&& f(3)  &= -1&&\\
+		\Leftrightarrow&& a \cdot (-1) + b &= 3&&\\
+		&& a \cdot 3 + b  &= -1&&\\
+	\end{align*}
+	\begin{align*}
+		\Rightarrow&&&\begin{pNiceArray}[columns-width=auto]{cc|c}
+			-1 1 3 {} ;
+			3 1 -1 {L_2 ~\gets~ +3L_1};
+		\end{pNiceArray}&&\\
+		\Leftrightarrow&&&\begin{pNiceArray}[columns-width=auto]{cc|c}
+			-1 1 3 {} ;
+			0 4 8 {};
+		\end{pNiceArray}&&\\
+	\end{align*}
+	\begin{align*}
+		\Rightarrow&&4b &= 8&&\\
+		\Leftrightarrow&& \alignedhighlight{lightgray}{b}{=2}&&\\
+		\\
+		&& -a + b &= 3&&\\
+		\Leftrightarrow && -a+2 &= 3&&\\
+		\Leftrightarrow && -a &= 1&&\\
+		\Leftrightarrow && \alignedhighlight{lightgray}{a}{= -1}&&\\
+		\\
+		\Rightarrow&& \alignedhighlight{lightgray}{f(x)}{= 2-x} &&\\
+	\end{align*}
+	\end{samepage}
+\section*{5. Aufgabe}
+	\subsection*{(1)}
+	\begin{samepage}
+	\begin{tabular}{p{0.6\linewidth}p{0.34\linewidth}}
+		{%First Box, Left
+		\begin{align*}
+			&& \sqrt{x+1} &= x-1 &&\\
+			\Leftrightarrow&& 1 &= \frac{x-1}{\sqrt{x+1}} &&\\
+			\Leftrightarrow&& 1 &= \sqrt{\frac{(x-1)^2}{x+1}} &&\\
+			\overset{\reference{1}}{\Leftrightarrow}&& \pm1 &= \frac{(x-1)^2}{x+1} &&\\
+		\end{align*}
+		}&{%First Box, Right
+		\begin{align*}
+			&\text{$\Rightarrow x > -1$,}\reference{2}\\
+			&\text{da $\sqrt{x}$ für $x<0$ undefiniert ist.}
+		\end{align*}
+		\begin{align*}
+			\sqrt{x} = 1 \Leftrightarrow x = \pm1 \reference{1}
+		\end{align*}
+		}\\
+		% \multicolumn{2}{c}{  }
+	\end{tabular}
+
+	\begin{center}
+		Damit gibt es also zwei mögliche Lösungspfade: ($1$ und $-1$)
+	\end{center}
+
+	\begin{tabular}{p{0.45\linewidth}|p{0.45\linewidth}}
+		\\{%First Box, Left
+		\vspace{-1cm}
+		\begin{align*}
+			&& \frac{(x-1)^2}{x+1} &= 1 &&\\
+			\Leftrightarrow&& (x-1)^2 &= x+1 &&\\
+			\Leftrightarrow&& x^2-2x+1 &= x+1 &&\\
+			\Leftrightarrow&& x^2-2x &= x &&\\
+			\Leftrightarrow&& x-2 &= 1 &&\\
+			\Leftrightarrow&& \alignedhighlight{lightgray}{x}{=3} &&\\
+		\end{align*}
+		}&{%First Box, Right
+		\vspace{-1cm}
+		\begin{align*}
+			&& \frac{(x-1)^2}{x+1} &= -1 &&\\
+			\Rightarrow&& (x-1)^2 < 0 &\lor x+1 < 0 &&\\
+			&&\text{da $(x-1)^2$ immer} & \text{\:positiv ist:} &&\\
+			\Rightarrow&& x+1 < 0 &\Leftrightarrow x < -1 &&\\
+		\end{align*}
+		Demnach müsste sowohl $x<-1$ und $x>-1 \reference{2}$ gelten. Was einen Widerspruch darstellt.
+		}\\
+	\end{tabular}
+
+	Also hat die Aussage $\sqrt{x+1} = x-1$ genau eine Lösung mit $x=3$.
+	\end{samepage}
+
+	\subsection*{(2)}
+	\begin{samepage}
+	\begin{align*}
+		&& x^2-5x+4 &=0 &&\\
+		\Rightarrow&& x_{1,2}&= -\frac{-5}{2} \pm \sqrt{\left(\frac{-5}{2}\right)^2 - 4 } &&\\
+		&& &= \frac{5}{2} \pm \sqrt{\frac{25}{4} - 4 } &&\\
+		&& &= \frac{5}{2} \pm \sqrt{\frac{9}{4}} &&\\
+		&& &= \frac{5}{2} \pm \frac{3}{2} &&\\
+		\Rightarrow&& x&\in \{1,4\} &&\\
+	\end{align*}
+	\end{samepage}
+	\subsection*{(3)}
+	\begin{samepage}
+	\begin{align*}
+		&& \frac{1}{5}x^2-2x+\frac{16}{5} &=0 &&\\
+		\Leftrightarrow&& x^2-10x+16 &=0 &&\\
+		\Rightarrow&& x_{1,2}&= -\frac{-10}{2} \pm \sqrt{\left(\frac{-10}{2}\right)^2 - 16 } &&\\
+		&& &= 5 \pm \sqrt{25 - 16 } &&\\
+		&& &= 5 \pm 3 &&\\
+		\Rightarrow&& x&\in \{2,8\} &&\\
+	\end{align*}
+	\end{samepage}
+	\subsection*{(4)}
+	\begin{samepage}
+	\begin{align*}
+		&& \frac{5x-3}{x+3} &= \frac{3x-2}{2x+2} &&\\
+		\Leftrightarrow&& (5x-3) \cdot (2x+2) &= (3x-2) \cdot (x+3) &&\\
+		\Leftrightarrow&& 10x^2 +10x -6x -6 &= 3x^2+9x-2x-6  &&\\
+		\Leftrightarrow&& 10x^2+4x-6 &= 3x^2+7x-6  &&\\
+		\Leftrightarrow&& 7x^2-3x &= 0 &&\\
+		\Leftrightarrow&& x(7x-3) &= 0 &&\\
+		\Leftrightarrow&& x \left( x-\frac{3}{7} \right) &= 0 &&\\
+		\Rightarrow&& x&\in \left\{0, \frac{3}{7} \right\} &&\\
+	\end{align*}
+	\end{samepage}
+	\subsection*{(5)}
+	\begin{samepage}
+	\begin{align*}
+		&& x^6-6x^4+ 8x^2 &= 0 &&\\
+		\Leftrightarrow&& x^2 \cdot (x^4-6x^2+ 8) &= 0 &&\\
+		\Leftrightarrow&& x = 0 \lor x^4-6x^2+ 8 &= 0 &&\\
+		\Leftrightarrow&& x = 0 \lor y^2-6y+ 8 &= 0 & y \coloneqq x^2&\\
+		\Rightarrow&& y_{1,2} &= -\frac{-6}{2} \pm \sqrt{\left(\frac{-6}{2}\right)^2 - 8 } &&\\
+		&&  &= 3 \pm \sqrt{9-8} &&\\
+		&&  &= 3 \pm 1 &&\\
+		\Rightarrow&& x=0 \lor y&\in \{2,4\} &&\\
+		\Leftrightarrow&& x=0 \lor x^2&\in \{2,4\} &&\\
+		\Leftrightarrow&& x=0 \lor x&\in \left\{\sqrt{2}, -\sqrt{2}, 2, -2\right\} &&\\
+		\Leftrightarrow&& x&\in \left\{-2, -\sqrt{2}, 0, \sqrt{2}, 2\right\} &&\\
+	\end{align*}
+	\end{samepage}
+\end{document}
