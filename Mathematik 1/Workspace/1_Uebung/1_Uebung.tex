@@ -1,0 +1,270 @@
+\documentclass[]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{%
+	ngerman,
+	ae,
+	times,  %% hier kann man die Schriftart einstellen
+	graphicx,
+	url,
+	scrlayer-scrpage,
+	lastpage,
+	mathtools,
+	geometry,
+	multicol,
+	cancel,
+	xcolor,
+	nicematrix,
+	xfrac,
+	tikz,
+	pgfplots,
+	amsmath,
+	colortbl,
+	centernot,
+	dsfont}
+\usepackage[thinlines]{easybmat}
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{datavisualization.formats.functions}
+\usetikzlibrary{intersections}
+\pgfplotsset{compat=1.17}
+\newcommand{\del}[1]{\cancel{~#1~}}
+\NiceMatrixOptions{ last-col,code-for-last-col = \color{blue}\scriptstyle,light-syntax}
+\newlength\dlf
+\newcommand\alignedhighlight[3]{
+  % #1 = color
+  % #2 = before alignment
+  % #3 = after alignment
+  &
+  \begingroup
+  \settowidth\dlf{$\displaystyle #2$}
+  \addtolength\dlf{\fboxsep+\fboxrule}
+  \hspace{-\dlf}
+  \fcolorbox{#1}{#1}{$\displaystyle #2 #3$}
+  \endgroup
+}
+\newcommand{\reference}[1]{ \text{\small{\textcolor{blue}{(#1)}}} }
+
+\newcommand{\topic}{Mathematik 1 f"ur Informatiker}
+\newcommand{\subtopic}{"Ubungsblatt 1}
+\newcommand{\authors}{Nils Helming}
+
+%Head and Footnotes
+\setlength{\headheight}{2.1\baselineskip} %baselineskip = minimum distance bbetween the bottom of one line to another.
+\geometry{bottom = 3cm}
+\setlength{\headsep}{\baselineskip}
+\ihead[\topic\hrule]{\topic\hrule}
+\chead[\subtopic\\~]{\subtopic\\~}
+\ohead[\authors\\~]{\authors\\~}
+\ifoot[~]{~}
+\cfoot[~]{~}
+\ofoot[Seite \thepage~von \pageref{LastPage}]{Seite \thepage~von \pageref{LastPage}}
+
+%Paragraph spacings
+\setlength{\parindent}{0em} %em = with of an 'M'
+\setlength{\parskip}{1ex} %ex = height of an 'x'
+
+
+\newcommand{\V}{\lor}
+\newcommand{\A}{\land}
+\newcommand{\T}[1]{\overline{#1}}
+\newcommand{\eq}{\Leftrightarrow}
+\newcommand{\rarr}{\Rightarrow}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+
+\begin{document}
+\section*{1. Aufgabe}
+\subsection*{(a) \normalfont Zeige $\T{A \V B} \eq \T{A} \A\T{B}$ mittels Wahrheitstabellen}
+	\begin{center}$\begin{BMAT}(r){c|c|c|c|c|c|c}{c|cccc}
+		A & B & \T{A} 	& \T{B} & A \V B 	& \T{A \V B}	& \T{A} \A\T{B} \\
+		w & w & f 		& f 	& w			& \red{f} 		& \red{f}\\
+		w & f & f 		& w 	& w			& \red{f} 		& \red{f}\\
+		f & w & w 		& f 	& w			& \red{f} 		& \red{f}\\
+		f & f & w 		& w 	& f			& \red{w} 		& \red{w}\\
+	\end{BMAT}$
+	$\Rightarrow (\T{A \V B} \eq \T{A} \A\T{B})$
+	\end{center}
+
+\subsection*{(b) \normalfont Zeige $A \V (B \A C) \Leftrightarrow (A \V B) \A (A \V C)$ mittels Wahrheitstabellen}
+	\begin{center}$\begin{BMAT}(r){c|c|c|c|c|c|c|c}{c|cccccccc}
+		A & B & C & B \A C 	& A \V B 	& A \V C 	& A \V (B \A C) & (A \V B) \A (A \V C)\\
+		w & w & w & w 		& w			& w			& \red{w}		& \red{w}\\
+		w & w & f & f 		& w			& w			& \red{w}		& \red{w}\\
+		w & f & w & f 		& w 		& w			& \red{w}		& \red{w}\\
+		w & f & f & f 		& w			& w			& \red{w}		& \red{w}\\
+		f & w & w & w 		& w			& w			& \red{w}		& \red{w}\\
+		f & w & f & f 		& w			& f			& \red{f}		& \red{f}\\
+		f & f & w & f 		& f			& w			& \red{f}		& \red{f}\\
+		f & f & f & f 		& f			& f			& \red{f}		& \red{f}\\
+	\end{BMAT}$
+	$\Rightarrow (A \V (B \A C) \Leftrightarrow (A \V B) \A (A \V C))$
+	\end{center}
+
+\subsection*{(c) \normalfont Zeige $(A \Rightarrow B) \eq (\T{A} \V B) $ mittels Wahrheitstabellen}
+	\begin{center}$\begin{BMAT}(r){c|c|c|c|c}{c|cccc}
+		A & B & \T{A} 	& A \Rightarrow B	& \T{A} \V B \\
+		w & w & f 		& \red{w} 			& \red{w}\\
+		w & f & f 		& \red{f} 			& \red{f}\\
+		f & w & w 		& \red{w} 			& \red{w}\\
+		f & f & w 		& \red{w} 			& \red{w}\\
+	\end{BMAT}$
+	$\Rightarrow ((A \Rightarrow B) \eq (\T{A} \V B))$
+	\end{center}
+
+\subsection*{(d) \normalfont Zeige $(A \Rightarrow B) \eq (\T{B} \Rightarrow \T{A})$ mittels Wahrheitstabellen}
+	\begin{center}$\begin{BMAT}(r){c|c|c|c|c|c}{c|cccc}
+		A & B & \T{A} 	& \T{B} & A \Rightarrow B	& \T{B} \Rightarrow \T{A} \\
+		w & w & f 		& f		&\red{w} 			& \red{w}\\
+		w & f & f 		& w		&\red{f} 			& \red{f}\\
+		f & w & w 		& f		&\red{w} 			& \red{w}\\
+		f & f & w 		& w		&\red{w} 			& \red{w}\\
+	\end{BMAT}$
+	$\Rightarrow ((A \Rightarrow B) \eq (\T{B} \Rightarrow \T{A}))$
+	\end{center}
+
+
+\section*{2. Aufgabe}
+\subsection*{(a) \normalfont Prüfe ob $ A \A (B \Rightarrow C) \eq (A \A \T{B}) \V (A \A C) $ mittels Wahrheitstabellen}
+	\begin{center}
+		$\begin{BMAT}(r){c|c|c|c|c|c|c|c|c}{c|cccccccc}
+		A & B & C & \T{B} 	& B \Rightarrow C 	& A \A \T{B}	& A \A C 	& A \A (B \Rightarrow C) 	& (A \A \T{B}) \V (A \A C) \\
+		w & w & w & f		& w					& f				& w			& \red{w}					& \red{w}\\
+		w & w & f & f		& f					& f				& f			& \red{f}					& \red{f}\\
+		w & f & w & w 		& w	 				& w				& w			& \red{w}					& \red{w}\\
+		w & f & f & w		& w					& w				& f			& \red{w}					& \red{w}\\
+		f & w & w & f		& w					& f				& w			& \red{f}					& \red{w}\\
+		f & w & f & f		& f					& f				& f			& \red{f}					& \red{f}\\
+		f & f & w & w		& w					& w				& w			& \red{f}					& \red{w}\\
+		f & f & f & w		& w					& w				& f			& \red{f}					& \red{w}\\
+	\end{BMAT}$
+	$\Rightarrow (A \V (B \A C) \centernot{\Leftrightarrow} (A \V B) \A (A \V C))$
+	\end{center}
+
+\subsection*{(b) \normalfont Prüfe ob $ A \Rightarrow \T{B} \eq \T{A \A B} $ mittels Wahrheitstabellen}
+	\begin{center}$\begin{BMAT}(r){c|c|c|c|c|c}{c|cccc}
+		A & B & \T{B} 	& A \A B 	& A \Rightarrow \T{B}	& \T{A \A B} \\
+		w & w & f		& w			& \red{f} 				& \red{f}\\
+		w & f & w		& f			& \red{w} 				& \red{w}\\
+		f & w & f		& f			& \red{w} 				& \red{w}\\
+		f & f & w		& f			& \red{w} 				& \red{w}\\
+	\end{BMAT}$
+	$\Rightarrow (A \Rightarrow \T{B} \eq \T{A \A B})$
+	\end{center}
+
+\section*{3. Aufgabe}
+\subsection*{(a) \normalfont Prüfe ob $ (((A \Rightarrow B)\A A) \Rightarrow B) \eq \mathds{1} $ mittels Wahrheitstabellen}
+	\begin{center}$\begin{BMAT}(r){c|c|c|c|c|c}{c|cccc}
+		A & B & A \Rightarrow B 	& (A \Rightarrow B) \A A 	& ((A \Rightarrow B) \A A) \Rightarrow B	& \mathds{1} \\
+		w & w & w					& w							& \red{w} 									& \red{w}\\
+		w & f & f					& f							& \red{w} 									& \red{w}\\
+		f & w & w					& f							& \red{w} 									& \red{w}\\
+		f & f & w					& f							& \red{w} 									& \red{w}\\
+	\end{BMAT}$
+	$\Rightarrow ((((A \Rightarrow B)\A A) \Rightarrow B) \eq \mathds{1})$
+	\end{center}
+
+\subsection*{(b) \normalfont Prüfe ob $ (((A \Rightarrow B)\A \T{B}) \Rightarrow \T{A}) \eq \mathds{1} $ mittels Wahrheitstabellen}
+	\begin{center}$\begin{BMAT}(r){c|c|c|c|c|c|c|c}{c|cccc}
+		A & B &\T{A}& \T{B}	& A \rarr B & (A \rarr B) \A \T{B} 	& ((A \rarr B) \A \T{B}) \rarr \T{A}	& \mathds{1} \\
+		w & w & f	& f		& w			& f						& \red{w} 								& \red{w}\\
+		w & f & f	& w		& f			& f						& \red{w} 								& \red{w}\\
+		f & w & w	& f		& w			& f						& \red{w} 								& \red{w}\\
+		f & f & w	& w		& w			& w						& \red{w} 								& \red{w}\\
+	\end{BMAT}$
+	$\Rightarrow ((((A \Rightarrow B)\A \T{B}) \Rightarrow \T{A}) \eq \mathds{1})$
+	\end{center}
+
+\section*{4. Aufgabe}
+\subsection*{(a) \normalfont Zeige $ ((A \A B) \V ( \T{A} \A \T{B})) \eq A \star B $ mittels Wahrheitstabellen}
+	\begin{center}$\begin{BMAT}(r){c|c|c|c|c|c|c|c}{c|cccc}
+		A & B &\T{A}& \T{B} &A \A B	& \T{A} \A \T{B} 	&  (A \A B) \V ( \T{A} \A \T{B})	& A \star B \\
+		w & w & f	& f		& w		& f					& \red{w} 							& \red{w}\\
+		w & f & f	& w		& f		& f					& \red{f} 							& \red{f}\\
+		f & w & w	& f		& f		& f					& \red{f} 							& \red{f}\\
+		f & f & w	& w		& f		& w					& \red{w} 							& \red{w}\\
+	\end{BMAT}$
+	$\Rightarrow (((A \A B) \V ( \T{A} \A \T{B})) \eq A \star B)$
+	\end{center}
+
+\subsection*{(b-1) \normalfont Prüfe ob $ ((A \V B)\eq(\T{B} \rarr A)) \eq \mathds{1} $ mittels Wahrheitstabellen}
+	\begin{center}$\begin{BMAT}(r){c|c|c|c|c|c|c}{c|cccc}
+		A & B &\T{B}& A \V B 	& \T{B} \rarr A	&  (A \V B)\eq(\T{B} \rarr A)	& \mathds{1} \\
+		w & w & f	& w			& w				& \red{w} 						& \red{w}\\
+		w & f & w	& w			& w				& \red{w} 						& \red{w}\\
+		f & w & f	& w			& w				& \red{w} 						& \red{w}\\
+		f & f & w	& f			& f				& \red{w} 						& \red{w}\\
+	\end{BMAT}$
+	$\Rightarrow (((A \V B)\eq(\T{B} \rarr A)) \eq \mathds{1})$
+	\end{center}
+
+\subsection*{(b-2) \normalfont Prüfe ob $ ((B \A \T{A}) \eq (\T{B} \V A)) \eq \mathds{1} $ mittels Wahrheitstabellen}
+	\begin{center}$\begin{BMAT}(r){c|c|c|c|c|c|c|c}{c|cccc}
+		A & B &\T{A}& \T{B} & B \A \T{A} 	& \T{B} \V A 	& (B \A \T{A}) \eq (\T{B} \V A) & \mathds{1} \\
+		w & w & f	& f		& f				& w				& \red{f} 						& \red{w}\\
+		w & f & f	& w		& f				& w				& \red{f} 						& \red{w}\\
+		f & w & w	& f		& w				& f				& \red{f} 						& \red{w}\\
+		f & f & w	& w		& f				& w				& \red{f} 						& \red{w}\\
+	\end{BMAT}$
+	$\Rightarrow (((B \A \T{A}) \eq (\T{B} \V A)) \centernot{\Leftrightarrow} \mathds{1})$
+	\end{center}
+
+\section*{5. Aufgabe}
+Bestimme die folgenden kartesischen Produkte zwischen\\$A = \{-2, -1, 0\}$, $B=\{1,2,3\}$ und $C=\{-1,0,2\}$:
+\subsection*{(a-1) \normalfont $ A \times B $:}
+	\begin{center}$
+	A \times B = \left\{
+	\begin{BMAT}(b){ccc}{ccc}
+		(-2, 1), & (-2, 2), & (-2, 3), \\
+		(-1, 1), & (-1, 2), & (-1, 3), \\
+		(\hphantom{-}0, 1), & (\hphantom{-}0, 2), & (\hphantom{-}0, 3)\hphantom{,} \\
+	\end{BMAT} \right\} $
+	\end{center}
+\subsection*{(a-2) \normalfont $ A \times C $:}
+	\begin{center}$
+	A \times C = \left\{
+	\begin{BMAT}(b){ccc}{ccc}
+		(-2, -1), & (-2, 0), & (-2, 2), \\
+		(-1, -1), & (-1, 0), & (-1, 2), \\
+		(\hphantom{-}0, -1), & (\hphantom{-}0, 0), & (\hphantom{-}0, 2)\hphantom{,} \\
+	\end{BMAT} \right\} $
+	\end{center}
+\subsection*{(a-3) \normalfont $ B \times C $:}
+	\begin{center}$
+	B \times C = \left\{
+	\begin{BMAT}(b){ccc}{ccc}
+		(1, -1), & (1, 0), & (1, 2), \\
+		(2, -1), & (2, 0), & (2, 2), \\
+		(3, -1), & (3, 0), & (3, 2)\hphantom{,} \\
+	\end{BMAT} \right\} $
+	\end{center}
+\subsection*{(b-1) \normalfont $ B \times A $:}
+	\begin{center}$
+	B \times A = \left\{
+	\begin{BMAT}(b){ccc}{ccc}
+		(1, -2), & (1, -1), & (1, 0), \\
+		(2, -2), & (2, -1), & (2, 0), \\
+		(3, -2), & (3, -1), & (3, 0)\hphantom{,} \\
+	\end{BMAT} \right\} $
+	\end{center}
+\subsection*{(b-2) \normalfont $ C \times A $:}
+	\begin{center}$
+	C \times A = \left\{
+	\begin{BMAT}(b){ccc}{ccc}
+		(-1, -2), & (-1, -1), & (-1, 0), \\
+		(\hphantom{-}0, -2), & (\hphantom{-}0, -1), & (\hphantom{-}0, 0), \\
+		(\hphantom{-}2, -2), & (\hphantom{-}2, -1), & (\hphantom{-}2, 0)\hphantom{,} \\
+	\end{BMAT} \right\} $
+	\end{center}
+
+\section*{6. Aufgabe}
+Gegeben ist die Aussage $A$ Auf jeden Topf passt ein Deckel, die Menge der Töpfe $T$ und die Menge der Deckel $D$.
+\subsection*{(a) \normalfont Formuliere $A$ mithilfe der Quantoren $\forall$ und $\exists$:}
+	Sei $P \subseteq (T \times D)$ die Menge aller Topf-Deckel-Paare, in welchem der Deckel auf den Topf passt. Dann gilt:
+	\begin{center}$A \eq \forall t \in T: \exists d \in D: (t, d) \in P$\end{center}
+\subsection*{(a) \normalfont Bilde die Verneinung von $A$ umgangssprachlich und mittels Quantoren:}
+	\begin{center}
+		$\T{A} \hat{=}$ Es gibt Töpfe ohne passenden Deckel. \\
+		$\T{A} \eq \exists t \in T: \forall d \in D: (t, d) \notin P$
+	\end{center}
+\end{document}
