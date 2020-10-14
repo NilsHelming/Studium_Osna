@@ -1,6 +1,6 @@
-# ignore everything within a 'Workspace' #
+# ignore everything within a Folder #
 ##########################################
-
+**/Mitschnitte/**/*.*
 **/Workspace/**/*.*
 
 # Except for... #
