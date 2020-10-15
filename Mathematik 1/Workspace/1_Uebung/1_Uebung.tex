@@ -83,10 +83,10 @@
 		f & w & w 		& f 	& w			& \red{f} 		& \red{f}\\
 		f & f & w 		& w 	& f			& \red{w} 		& \red{w}\\
 	\end{BMAT}$
-	$\Rightarrow (\T{A \V B} \eq \T{A} \A\T{B})$
+	$\rarr (\T{A \V B} \eq \T{A} \A\T{B})$
 	\end{center}
 
-\subsection*{(b) \normalfont Zeige $A \V (B \A C) \Leftrightarrow (A \V B) \A (A \V C)$ mittels Wahrheitstabellen}
+\subsection*{(b) \normalfont Zeige $A \V (B \A C) \eq (A \V B) \A (A \V C)$ mittels Wahrheitstabellen}
 	\begin{center}$\begin{BMAT}(r){c|c|c|c|c|c|c|c}{c|cccccccc}
 		A & B & C & B \A C 	& A \V B 	& A \V C 	& A \V (B \A C) & (A \V B) \A (A \V C)\\
 		w & w & w & w 		& w			& w			& \red{w}		& \red{w}\\
@@ -98,73 +98,73 @@
 		f & f & w & f 		& f			& w			& \red{f}		& \red{f}\\
 		f & f & f & f 		& f			& f			& \red{f}		& \red{f}\\
 	\end{BMAT}$
-	$\Rightarrow (A \V (B \A C) \Leftrightarrow (A \V B) \A (A \V C))$
+	$\rarr (A \V (B \A C) \eq (A \V B) \A (A \V C))$
 	\end{center}
 
-\subsection*{(c) \normalfont Zeige $(A \Rightarrow B) \eq (\T{A} \V B) $ mittels Wahrheitstabellen}
+\subsection*{(c) \normalfont Zeige $(A \rarr B) \eq (\T{A} \V B) $ mittels Wahrheitstabellen}
 	\begin{center}$\begin{BMAT}(r){c|c|c|c|c}{c|cccc}
-		A & B & \T{A} 	& A \Rightarrow B	& \T{A} \V B \\
+		A & B & \T{A} 	& A \rarr B	& \T{A} \V B \\
 		w & w & f 		& \red{w} 			& \red{w}\\
 		w & f & f 		& \red{f} 			& \red{f}\\
 		f & w & w 		& \red{w} 			& \red{w}\\
 		f & f & w 		& \red{w} 			& \red{w}\\
 	\end{BMAT}$
-	$\Rightarrow ((A \Rightarrow B) \eq (\T{A} \V B))$
+	$\rarr ((A \rarr B) \eq (\T{A} \V B))$
 	\end{center}
 
-\subsection*{(d) \normalfont Zeige $(A \Rightarrow B) \eq (\T{B} \Rightarrow \T{A})$ mittels Wahrheitstabellen}
+\subsection*{(d) \normalfont Zeige $(A \rarr B) \eq (\T{B} \rarr \T{A})$ mittels Wahrheitstabellen}
 	\begin{center}$\begin{BMAT}(r){c|c|c|c|c|c}{c|cccc}
-		A & B & \T{A} 	& \T{B} & A \Rightarrow B	& \T{B} \Rightarrow \T{A} \\
+		A & B & \T{A} 	& \T{B} & A \rarr B			& \T{B} \rarr \T{A} \\
 		w & w & f 		& f		&\red{w} 			& \red{w}\\
 		w & f & f 		& w		&\red{f} 			& \red{f}\\
 		f & w & w 		& f		&\red{w} 			& \red{w}\\
 		f & f & w 		& w		&\red{w} 			& \red{w}\\
 	\end{BMAT}$
-	$\Rightarrow ((A \Rightarrow B) \eq (\T{B} \Rightarrow \T{A}))$
+	$\rarr ((A \rarr B) \eq (\T{B} \rarr \T{A}))$
 	\end{center}
 
 
 \section*{2. Aufgabe}
-\subsection*{(a) \normalfont Prüfe ob $ A \A (B \Rightarrow C) \eq (A \A \T{B}) \V (A \A C) $ mittels Wahrheitstabellen}
+\subsection*{(a) \normalfont Prüfe ob $ A \A (B \rarr C) \eq (A \A \T{B}) \V (A \A C) $ mittels Wahrheitstabellen}
 	\begin{center}
 		$\begin{BMAT}(r){c|c|c|c|c|c|c|c|c}{c|cccccccc}
-		A & B & C & \T{B} 	& B \Rightarrow C 	& A \A \T{B}	& A \A C 	& A \A (B \Rightarrow C) 	& (A \A \T{B}) \V (A \A C) \\
-		w & w & w & f		& w					& f				& w			& \red{w}					& \red{w}\\
-		w & w & f & f		& f					& f				& f			& \red{f}					& \red{f}\\
-		w & f & w & w 		& w	 				& w				& w			& \red{w}					& \red{w}\\
-		w & f & f & w		& w					& w				& f			& \red{w}					& \red{w}\\
-		f & w & w & f		& w					& f				& w			& \red{f}					& \red{w}\\
-		f & w & f & f		& f					& f				& f			& \red{f}					& \red{f}\\
-		f & f & w & w		& w					& w				& w			& \red{f}					& \red{w}\\
-		f & f & f & w		& w					& w				& f			& \red{f}					& \red{w}\\
+		A & B & C & \T{B} 	& B \rarr C 		& A \A \T{B}	& A \A C 	& A \A (B \rarr C) 	& (A \A \T{B}) \V (A \A C) \\
+		w & w & w & f		& w					& f				& w			& \red{w}			& \red{w}\\
+		w & w & f & f		& f					& f				& f			& \red{f}			& \red{f}\\
+		w & f & w & w 		& w	 				& w				& w			& \red{w}			& \red{w}\\
+		w & f & f & w		& w					& w				& f			& \red{w}			& \red{w}\\
+		f & w & w & f		& w					& f				& f			& \red{f}			& \red{f}\\
+		f & w & f & f		& f					& f				& f			& \red{f}			& \red{f}\\
+		f & f & w & w		& w					& w				& f			& \red{f}			& \red{f}\\
+		f & f & f & w		& w					& w				& f			& \red{f}			& \red{f}\\
 	\end{BMAT}$
-	$\Rightarrow (A \V (B \A C) \centernot{\Leftrightarrow} (A \V B) \A (A \V C))$
+	$\rarr (A \V (B \A C) \eq (A \V B) \A (A \V C))$
 	\end{center}
 
-\subsection*{(b) \normalfont Prüfe ob $ A \Rightarrow \T{B} \eq \T{A \A B} $ mittels Wahrheitstabellen}
+\subsection*{(b) \normalfont Prüfe ob $ A \rarr \T{B} \eq \T{A \A B} $ mittels Wahrheitstabellen}
 	\begin{center}$\begin{BMAT}(r){c|c|c|c|c|c}{c|cccc}
-		A & B & \T{B} 	& A \A B 	& A \Rightarrow \T{B}	& \T{A \A B} \\
+		A & B & \T{B} 	& A \A B 	& A \rarr \T{B}			& \T{A \A B} \\
 		w & w & f		& w			& \red{f} 				& \red{f}\\
 		w & f & w		& f			& \red{w} 				& \red{w}\\
 		f & w & f		& f			& \red{w} 				& \red{w}\\
 		f & f & w		& f			& \red{w} 				& \red{w}\\
 	\end{BMAT}$
-	$\Rightarrow (A \Rightarrow \T{B} \eq \T{A \A B})$
+	$\rarr (A \rarr \T{B} \eq \T{A \A B})$
 	\end{center}
 
 \section*{3. Aufgabe}
-\subsection*{(a) \normalfont Prüfe ob $ (((A \Rightarrow B)\A A) \Rightarrow B) \eq \mathds{1} $ mittels Wahrheitstabellen}
+\subsection*{(a) \normalfont Prüfe ob $ (((A \rarr B)\A A) \rarr B) \eq \mathds{1} $ mittels Wahrheitstabellen}
 	\begin{center}$\begin{BMAT}(r){c|c|c|c|c|c}{c|cccc}
-		A & B & A \Rightarrow B 	& (A \Rightarrow B) \A A 	& ((A \Rightarrow B) \A A) \Rightarrow B	& \mathds{1} \\
-		w & w & w					& w							& \red{w} 									& \red{w}\\
-		w & f & f					& f							& \red{w} 									& \red{w}\\
-		f & w & w					& f							& \red{w} 									& \red{w}\\
-		f & f & w					& f							& \red{w} 									& \red{w}\\
+		A & B & A \rarr B 			& (A \rarr B) \A A 			& ((A \rarr B) \A A) \rarr B	& \mathds{1} \\
+		w & w & w					& w							& \red{w} 						& \red{w}\\
+		w & f & f					& f							& \red{w} 						& \red{w}\\
+		f & w & w					& f							& \red{w} 						& \red{w}\\
+		f & f & w					& f							& \red{w} 						& \red{w}\\
 	\end{BMAT}$
-	$\Rightarrow ((((A \Rightarrow B)\A A) \Rightarrow B) \eq \mathds{1})$
+	$\rarr ((((A \rarr B)\A A) \rarr B) \eq \mathds{1})$
 	\end{center}
 
-\subsection*{(b) \normalfont Prüfe ob $ (((A \Rightarrow B)\A \T{B}) \Rightarrow \T{A}) \eq \mathds{1} $ mittels Wahrheitstabellen}
+\subsection*{(b) \normalfont Prüfe ob $ (((A \rarr B)\A \T{B}) \rarr \T{A}) \eq \mathds{1} $ mittels Wahrheitstabellen}
 	\begin{center}$\begin{BMAT}(r){c|c|c|c|c|c|c|c}{c|cccc}
 		A & B &\T{A}& \T{B}	& A \rarr B & (A \rarr B) \A \T{B} 	& ((A \rarr B) \A \T{B}) \rarr \T{A}	& \mathds{1} \\
 		w & w & f	& f		& w			& f						& \red{w} 								& \red{w}\\
@@ -172,7 +172,7 @@
 		f & w & w	& f		& w			& f						& \red{w} 								& \red{w}\\
 		f & f & w	& w		& w			& w						& \red{w} 								& \red{w}\\
 	\end{BMAT}$
-	$\Rightarrow ((((A \Rightarrow B)\A \T{B}) \Rightarrow \T{A}) \eq \mathds{1})$
+	$\rarr ((((A \rarr B)\A \T{B}) \rarr \T{A}) \eq \mathds{1})$
 	\end{center}
 
 \section*{4. Aufgabe}
@@ -184,7 +184,7 @@
 		f & w & w	& f		& f		& f					& \red{f} 							& \red{f}\\
 		f & f & w	& w		& f		& w					& \red{w} 							& \red{w}\\
 	\end{BMAT}$
-	$\Rightarrow (((A \A B) \V ( \T{A} \A \T{B})) \eq A \star B)$
+	$\rarr (((A \A B) \V ( \T{A} \A \T{B})) \eq A \star B)$
 	\end{center}
 
 \subsection*{(b-1) \normalfont Prüfe ob $ ((A \V B)\eq(\T{B} \rarr A)) \eq \mathds{1} $ mittels Wahrheitstabellen}
@@ -195,7 +195,7 @@
 		f & w & f	& w			& w				& \red{w} 						& \red{w}\\
 		f & f & w	& f			& f				& \red{w} 						& \red{w}\\
 	\end{BMAT}$
-	$\Rightarrow (((A \V B)\eq(\T{B} \rarr A)) \eq \mathds{1})$
+	$\rarr (((A \V B)\eq(\T{B} \rarr A)) \eq \mathds{1})$
 	\end{center}
 
 \subsection*{(b-2) \normalfont Prüfe ob $ ((B \A \T{A}) \eq (\T{B} \V A)) \eq \mathds{1} $ mittels Wahrheitstabellen}
@@ -206,7 +206,7 @@
 		f & w & w	& f		& w				& f				& \red{f} 						& \red{w}\\
 		f & f & w	& w		& f				& w				& \red{f} 						& \red{w}\\
 	\end{BMAT}$
-	$\Rightarrow (((B \A \T{A}) \eq (\T{B} \V A)) \centernot{\Leftrightarrow} \mathds{1})$
+	$\rarr (((B \A \T{A}) \eq (\T{B} \V A)) \centernot{\eq} \mathds{1})$
 	\end{center}
 
 \section*{5. Aufgabe}
@@ -264,7 +264,7 @@ Gegeben ist die Aussage $A$ Auf jeden Topf passt ein Deckel, die Menge der Töpf
 	\begin{center}$A \eq \forall t \in T: \exists d \in D: (t, d) \in P$\end{center}
 \subsection*{(a) \normalfont Bilde die Verneinung von $A$ umgangssprachlich und mittels Quantoren:}
 	\begin{center}
-		$\T{A} \hat{=}$ Es gibt Töpfe ohne passenden Deckel. \\
+		$\T{A} \hat{=}$ Es gibt mindestens einen Topf ohne passenden Deckel. \\
 		$\T{A} \eq \exists t \in T: \forall d \in D: (t, d) \notin P$
 	\end{center}
 \end{document}
