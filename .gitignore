@@ -11,3 +11,9 @@
 !*.pdf
 !*.asc
 !*.png
+
+
+# and these REALLY DONT! #
+##########################
+
+**/NetCase/**/*.*
