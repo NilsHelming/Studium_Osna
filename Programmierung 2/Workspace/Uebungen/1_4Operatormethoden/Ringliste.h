@@ -1,0 +1,4 @@
+
+class Ringliste{
+    Ringliste (int);
+};
