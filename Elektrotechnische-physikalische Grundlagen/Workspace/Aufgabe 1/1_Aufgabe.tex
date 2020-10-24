@@ -269,6 +269,61 @@
 	$Q = \frac{1}{2} m v^2$\\
 	$\rarr v = \sqrt{ 2 \cdot \frac{Q}{m}} = \sqrt{2\cdot \frac{80\% \cdot 103,04\unit{Wh}}{1200\unit{kg}}} = \sqrt{2\cdot \frac{296.755\unit{kg~\textsq{m}}}{1200\unit{kg~\textsq{s}}}} = \sqrt{494,6 \fracunit{\textsq{m}}{\textsq{s}}} = 22,24 \fracunit{m}{s} = 80\unit{km/h}$
 
+\section*{Aufgabe 1.16}
+	Die zur Überwindung des Luftwiderstandes notwendige Kraft ist: $F = \frac{1}{2}\rho~A~c_w~v^2$\\
+	$\rho = 1,20\unit{kg/\textpow{m}{3}}$ 'Luftdichte'\\
+	$A = 2,22\unit{\textsq{m}} $ Frontfläche des PKW\\
+	$c_w = 0,32$ Luftwiderstandsbeiwert\\
+	$v = 100\unit{km/h} = 27,8\unit{m/s}$ Geschwindigkeit des PKW
+
+\subsection*{(a)}
+	$F = \frac{1}{2}\rho~A~c_w~v^2 = \frac{1}{2}~1,20\fracunit{kg}{\textpow{m}{3}}\cdot 2,22\unit{\textsq{m}} \cdot 0,32 \cdot (27,8\fracunit{m}{s})^2 = 329,4\fracunit{kg~m}{\textsq{s}} = 329,4\unit{N}$\\
+	mit $W = F \cdot d = F \cdot v \cdot t$ und $W = P \cdot t$ gibt sich:\\
+	$P = F \cdot v = 329,4\fracunit{kg~m}{\textsq{s}} \cdot 27,8\fracunit{m}{s} = 9.157,7\fracunit{kg~\textsq{m}}{\textpow{s}{3}} = 9.157,7\unit{W}$
+\subsection*{(b)}
+	Aus dem der benötigten Kraft $F = 329,4\unit{N}$ und der Formel $W = F \cdot d$ gibt sich eine benötigte Energie von:\\
+	$W = F \cdot d = 329,4\fracunit{kg~m}{\textsq{s}} \cdot 100.000\unit{m} = 32.940.000\unit{Ws} = 9,150\unit{kWh}$\\
+	Bei einem Wirkunksgrad von $35\%$, benötigt der Benzinmotor also eine Energie von $W_{Motor} = \frac{9,150\unit{kWh}}{35\%} = 26,143\unit{kWh}$ und somit ein Benzinvolumen $V = \frac{26,143\unit{kWh}}{8,8\unit{kWh/L}} = 2,97\unit{L}$ über eine Strecke von $100\unit{km}$.
+\subsection*{(c)}
+	Mit einer Geschwindigkeit $v' = 200\unit{km/h} = 55,6\unit{m/s}$ ergibt sich dann (wie in (a))\\
+	$F' = \frac{1}{2}\rho~A~c_w~v'^2 = \frac{1}{2}~1,20\fracunit{kg}{\textpow{m}{3}}\cdot 2,22\unit{\textsq{m}} \cdot 0,32 \cdot (55,6\unit{m/s})^2 = 1.317,7\unit{N}$\\
+	$P' = F' \cdot v' = 1.317,7\fracunit{kg~m}{\textsq{s}} \cdot 55,6\fracunit{m}{s} = 9.157,7\fracunit{kg~\textsq{m}}{\textpow{s}{3}} = 73.262\unit{W}$
+\subsection*{(d)}
+	Wie in (b):\\
+	$W' = F' \cdot d = 1.317,7\fracunit{kg~m}{\textsq{s}} \cdot 100.000\unit{m} = 131.770.000\unit{Ws} = 36,6\unit{kWh}$\\
+	$W'_{Motor} = \frac{36,6\unit{kWh}}{35\%} = 104,6\unit{kWh}$\\
+	$V' = \frac{104,6\unit{kWh}}{8,8\unit{kWh/L}} = 11,88\unit{L}$
+
+\section*{Aufgabe 1.17}
+	\includegraphics[scale=0.6]{Skizze_A1_17.png}\par
+	$\frac{1}{R_{par}} = \sum_{i=1}^{n} \frac{1}{R_i}$ Gesamtwiderstand von Widerständen in Parallelschaltung \\
+	$R_{rei} = \sum_{i=1}^{n} {R_i}$ Gesamtwiderstand von Widerständen in Reihenschaltung \\
+
+	$R_{12} = R_1 + R_2 = 6\unit{\textOmega} + 4\unit{\textOmega} = 10\unit{\textOmega}$\\
+	$\frac{1}{R_{123}} = \frac{1}{R_{12}} + \frac{1}{R_3} = \frac{1}{10\unit{\textOmega}}+ \frac{1}{4\unit{\textOmega}} = \frac{7}{20\unit{\textOmega}} = \frac{1}{20/7\unit{\textOmega}}$\\
+	$R_{1234} = R_{123} +  R_4 = 20/7\unit{\textOmega} + 2\unit{\textOmega} = 34/7\unit{\textOmega}$\\
+	$\frac{1}{R_{12345}} = \frac{1}{R_{1234}} + \frac{1}{R_5} = \frac{1}{35/7\unit{\textOmega}} + \frac{1}{6\unit{\textOmega}} = \frac{42}{210\unit{\textOmega}} + \frac{35}{210\unit{\textOmega}} = \frac{77}{210\unit{\textOmega}} = \frac{1}{30/11\unit{\textOmega}}$\\
+	$R = 2,73\unit{\textOmega}$
+
+\section*{Aufgabe 1.18}
+	Sei:\\
+	$U_{AB}$ die Spannung zwischen A und B\\
+	$I_{AB}$ der Stromfluss zwischen A und B\\
+	$R_{AB}$ der Gesamtwiderstand zwischen A und B\\
+	$R_1, I_1$ der Widerstand und der fließende Strom durch selbigen\\
+	$R_i, I_i$ der Widerstand und der fließende Strom durch die Messeinheit\\
+
+	mit $U = R \cdot I$ und $I_{AB} = I_1 + I_i$ ergibt sich:\\
+	$R_1 = \frac{U_{AB}}{I_1} = \frac{R_i \cdot I_i}{I_{AB} - I_i} = \frac{1000\unit{\textOmega} \cdot 100*10^{-6}\unit{A}}{10*10^{-3}\unit{A} - 100*10^{-6}\unit{A}} = \frac{100.000\unit{\textOmega} \cdot 10^{-6}\unit{A}}{9900*10^{-6}\unit{A}} = 10,1\unit{\textOmega}$
+
+\section*{Aufgabe 1.19}
+	$R = \frac{U}{I} = \frac{5\unit{V}}{100\unit{\textmu A}} = \frac{5\unit{V}}{100*10^{-6}\unit{A}} = \frac{5*10^4\unit{V}}{1\unit{A}} = 50\unit{k\textOmega}$\\
+	$\rarr R_1 = 50\unit{k\textOmega} - R_i = 49\unit{k\textOmega}$\\
+	$R = \frac{U}{I} = \frac{50\unit{V}}{100\unit{\textmu A}} = \frac{50\unit{V}}{100*10^{-6}\unit{A}} = \frac{50*10^4\unit{V}}{1\unit{A}} = 500\unit{k\textOmega}$\\
+	$\rarr R_2 = 500\unit{k\textOmega} - R_1 - R_i = 450\unit{k\textOmega}$\\
+
+
+
 
 
 \end{document}
