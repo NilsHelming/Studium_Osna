@@ -368,4 +368,120 @@ end TCL_Generic;&#13;
       <a name="facing" val="north"/>
     </comp>
   </circuit>
+  <circuit name="INV_CMOS">
+    <a name="circuit" val="INV_CMOS"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif bold 16"/>
+    <a name="circuitnamedbox" val="true"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="circuitvhdlpath" val=""/>
+    <wire from="(170,80)" to="(200,80)"/>
+    <wire from="(270,80)" to="(290,80)"/>
+    <wire from="(200,50)" to="(250,50)"/>
+    <wire from="(200,110)" to="(250,110)"/>
+    <wire from="(270,70)" to="(270,80)"/>
+    <wire from="(270,20)" to="(270,30)"/>
+    <wire from="(270,80)" to="(270,90)"/>
+    <wire from="(270,130)" to="(270,140)"/>
+    <wire from="(200,50)" to="(200,80)"/>
+    <wire from="(200,80)" to="(200,110)"/>
+    <comp lib="9" loc="(4,80)" name="Text">
+      <a name="text" val="27.10.2020"/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="9" loc="(4,40)" name="Text">
+      <a name="text" val="Nabeel Elamaireh"/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="0" loc="(170,80)" name="Pin">
+      <a name="label" val="X1"/>
+    </comp>
+    <comp lib="9" loc="(4,60)" name="Text">
+      <a name="text" val="Lukas Piening"/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="9" loc="(4,20)" name="Text">
+      <a name="text" val="Nils Helming"/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="9" loc="(318,216)" name="Text"/>
+    <comp lib="0" loc="(270,70)" name="Transistor">
+      <a name="facing" val="south"/>
+    </comp>
+    <comp lib="0" loc="(270,20)" name="Power"/>
+    <comp lib="0" loc="(270,90)" name="Transistor">
+      <a name="type" val="n"/>
+      <a name="facing" val="north"/>
+    </comp>
+    <comp lib="0" loc="(270,140)" name="Ground"/>
+    <comp lib="0" loc="(290,80)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Y"/>
+    </comp>
+  </circuit>
+  <circuit name="XOR_CMOS">
+    <a name="circuit" val="XOR_CMOS"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif bold 16"/>
+    <a name="circuitnamedbox" val="true"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="circuitvhdlpath" val=""/>
+    <wire from="(380,160)" to="(400,160)"/>
+    <wire from="(170,70)" to="(380,70)"/>
+    <wire from="(620,20)" to="(620,90)"/>
+    <wire from="(170,20)" to="(170,70)"/>
+    <wire from="(170,130)" to="(170,180)"/>
+    <wire from="(390,20)" to="(400,20)"/>
+    <wire from="(390,180)" to="(400,180)"/>
+    <wire from="(160,70)" to="(170,70)"/>
+    <wire from="(160,130)" to="(170,130)"/>
+    <wire from="(170,130)" to="(400,130)"/>
+    <wire from="(620,110)" to="(620,160)"/>
+    <wire from="(400,40)" to="(400,130)"/>
+    <wire from="(380,70)" to="(380,160)"/>
+    <comp lib="9" loc="(4,60)" name="Text">
+      <a name="text" val="Lukas Piening"/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="9" loc="(4,80)" name="Text">
+      <a name="text" val="27.10.2020"/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="9" loc="(4,20)" name="Text">
+      <a name="text" val="Nils Helming"/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="9" loc="(4,40)" name="Text">
+      <a name="text" val="Nabeel Elamaireh"/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="9" loc="(318,216)" name="Text"/>
+    <comp lib="0" loc="(160,70)" name="Pin">
+      <a name="label" val="X1"/>
+    </comp>
+    <comp loc="(390,20)" name="INV_CMOS"/>
+    <comp lib="0" loc="(840,90)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Y"/>
+    </comp>
+    <comp lib="0" loc="(160,130)" name="Pin">
+      <a name="label" val="X2"/>
+    </comp>
+    <comp loc="(840,90)" name="NAND_CMOS"/>
+    <comp loc="(620,160)" name="NAND_CMOS"/>
+    <comp loc="(620,20)" name="NAND_CMOS"/>
+    <comp loc="(390,180)" name="INV_CMOS"/>
+  </circuit>
 </project>
