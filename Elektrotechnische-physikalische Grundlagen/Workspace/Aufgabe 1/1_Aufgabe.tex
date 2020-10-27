@@ -324,6 +324,17 @@
 
 
 \section*{Aufgabe 1.20}
+	Annahme: Batterie ist eine Spannungsquelle.
+	$U_0 = 1,57\unit{V}$\\
+	$U_{R_x} = 1,42\unit{V}$\\
+	$R_x = 1,5 \unit{\textOmega}$\\
+	Der Strom, welcher durch beide Widerstände fließt (also auch durch $R_x$), ist damit:\\
+	$I = \frac{U_{R_x}}{R_x} = \frac{1,42\unit{V}}{1,5\unit{\textOmega}} = 0,95\unit{A}$\\
+	Aus der Maschenregel (2. Kirchhoffsches Gesetz) lässt sich zudem folgern, dass:\\
+	$U_0 = U_{R_i} + U_{R_x} \rarr U_{R_i} = U_0 - U_{R_x} = 1,57\unit{V} - 1,42\unit{V} = 0,15\unit{V}$\\
+	Und aus Stromfluss durch und Spannungabfall über $R_i$ lässt sich nun dessen Widerstand bestimmen:\\
+	$R_i = \frac{U_{R_i}}{I} = \frac{0,15\unit{V}}{0,95\unit{A}} = 0,158\unit{\textOmega}$
+
 \section*{Aufgabe 1.21}
 	$R_i = 2 \unit{\textOmega}$\\
 	$\frac{\Delta U}{U_0} = \frac{U_0 - U}{U_0} = 0.1\%$\\
@@ -338,4 +349,33 @@
 	$\frac{1}{R} = \frac{1}{R_i} + \frac{1}{R_B} = \frac{1}{20 \unit{\textOmega}} + \frac{1}{400 \unit{\textOmega}} = \frac{21}{400 \unit{\textOmega}} = \frac{1}{400/21\unit{\textOmega}}$\\
 	$R = \frac{400}{21}\unit{\textOmega}$\\
 	$I = \frac{U}{R} = \frac{30\unit{V}}{400/21\unit{\textOmega}} = 1,575 \fracunit{V}{\textOmega} = 1,575\unit{A} $
+\section*{Aufgabe 1.23}
+	Aus der Maschenregel folgen diese Gleichungen: (2. Kirchhoffsches Gesetz)\\
+	$U_1 = U_{R_a} + U_2 \rarr U_{R_a} = U_1 - U_2 = 12\unit{V} - 6\unit{V} = 6\unit{V}$\\
+	$U_1 = U_{R_a} + U_{R_b} \rarr U_{R_b} = U_1 - U_{R_a} = 12\unit{V}-6\unit{V} = 6\unit{V}$\\
+	Mit $U = R \cdot I$ ergibt sich dann:\\
+	$I_{R_a} = \frac{U_{R_a}}{R_a} = \frac{6\unit{V}}{6\unit{\textOmega}} = 1\unit{A}$\\
+	$I_{R_b} = \frac{U_{R_b}}{R_b} = \frac{6\unit{V}}{3\unit{\textOmega}} = 2\unit{A}$\\
+	Aus der Knotenregel folgt zudem: (1. Kirchhoffsches Gesetz)\\
+	$I_3 = I_1 + I_2 \eq I_{R_b} = I_{R_a} + I_2$\\
+	$\rarr I_2 = 2\unit{A} - 1\unit{A} = 1\unit{A}$\\
+	Also: $I_1 = 1\unit{A}$ und $I_2 = 1\unit{A}$.
+\section*{Aufgabe 1.24}
+\subsection*{(a)}
+	Aus der Knotenregel (1. Kirchhoffsches Gesetz) lässt sich folgern, dass:\\
+	$I_1 + I_2 = I_R = 100\unit{A}$\\
+	Mit der Maschenregel (2. Kirchhoffsches Gesetz) können wir auch festlegen, dass:\\
+	$U_1 + U_{R_{i1}} = U_2 + U_{R_{i2}}$, da $U_1 = U_2 = 14V \rarr U_{R_{i1}} = U_{R_{i2}} = U_{R_i}$\\
+	Damit folgt: (zusammen mit $U=R\cdot I$)\\
+	$I_R = I_1 + I_2 = \frac{U_{R_{i1}}}{R_{i1}} + \frac{U_{R_{i2}}}{R_{i2}} = \frac{U_{R_i}}{10\unit{m\textOmega}} + \frac{U_{R_i}}{20\unit{m\textOmega}} = \frac{3U_{R_i}}{20\unit{m\textOmega}}$\\
+	$\rarr 100\unit{A} = \frac{3U_{R_i}}{20\unit{m\textOmega}} \rarr U_{R_i} = \frac{2000}{3}\unit{mV} = \frac{2}{3}\unit{V}$\\
+	Mit der Maschenregel (2. Kirchhoffsches Gesetz) können wir nun folgern:\\
+	$U_2 = U + U_{R_{i2}} \rarr U = U_2 - U_{R_{i2}} = 14\unit{V}-\frac{2}{3}\unit{V} = 13,33\unit{V}$
+\subsection*{(b)}
+	Durch umformen der oben bereitgestellten Gleichungen kommen wir zu folgenden Ergebnissen:\\
+	$I_2 = \frac{U_{R_{i2}}}{R_{i2}} = \frac{U_{R_{i1}}}{20\unit{m\textOmega}} = \frac{U_{R_{i1}}}{2 \cdot R_{i1}} = \frac{1}{2}I_1 \rarr I_1 = 2I_2$\\
+	$I_R = I_1 + I_2 = 2I_2 + I_2$\\
+	$\rarr I_2 = \frac{I_R}{3} = 33,3\unit{A}$\\
+	$\rarr I_1 = 2I_2 = 66,7\unit{A}$\\
+
 \end{document}
