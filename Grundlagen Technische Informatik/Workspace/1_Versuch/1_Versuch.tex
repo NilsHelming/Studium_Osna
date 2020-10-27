@@ -24,7 +24,8 @@
 	centernot,
 	dsfont,
 	textgreek,
-	icomma}
+	icomma,
+	pdfpages}
 \usepackage[thinlines]{easybmat}
 \usetikzlibrary{datavisualization}
 \usetikzlibrary{datavisualization.formats.functions}
@@ -47,7 +48,7 @@
 }
 \newcommand{\reference}[1]{ \text{\small{\textcolor{blue}{(#1)}}} }
 
-\newcommand{\topic}{Grundlagen Technischer Informatik}
+\newcommand{\topic}{Grundlagen Technische Informatik}
 \newcommand{\subtopic}{Versuch 1}
 \newcommand{\authors}{Kleingruppe A2}
 
@@ -82,11 +83,15 @@
 
 
 \begin{document}
+\includepdf[pages=-]{Versuch1H_Deckblatt.pdf}
 \section*{Vorbereitung}
-	Disjunktive Normalform von XOR:\\
-	$ X_1 \cdot X_2 = m_1 \V m_2 = (\T{X_1} \A X_2) \V (X_1 \A \T{X_2}) $\\
-	Umformung in NAND und Inverter:\\
-	$ (\T{X_1} \A X_2) \V (X_1 \A \T{X_2}) = \T{\T{\T{X_1} \A X_2} \A \T{X_1 \A \T{X_2}}}$
+	\begin{align*}
+		\text{Disjunktive Normalform von XOR:}&\\
+		X_1 \oplus X_2 &= m_1 \V m_2 = (\T{X_1} \A X_2) \V (X_1 \A \T{X_2})\\
+		\text{Umformung in NAND und Inverter:}&\text{ (2. De Morgansches Gesetz)}\\
+		X_1 \oplus X_2 &= (\T{X_1} \A X_2) \V (X_1 \A \T{X_2})\\
+		&= \T{\T{\T{X_1} \A X_2} \A \T{X_1 \A \T{X_2}}}\\
+	\end{align*}
 \section*{Aufgabe 1: Simulation von Logik-Gattern mit Logisim-Evolution}
 \subsection*{1a)}
 	\begin{center}\includegraphics[scale=0.7]{Bilder/1_a.png}\end{center}
@@ -114,37 +119,39 @@
 
 
 \section*{Aufgabe 2: Normalformen einfacher Schaltungen}
-	\subsection*{$Y_1$:}
-	Minterme:\\
-	$m_0 = \T{X_2} \A \T{X_1} \A \T{X_0}$\\
-	$m_1 = \T{X_2} \A \T{X_1} \A 	X_0$\\
-	$m_2 = \T{X_2} \A     X_1 \A \T{X_0}$\\
-	$m_3 = \T{X_2} \A     X_1 \A    X_0$\\
-	$m_4 =     X_2 \A \T{X_1} \A \T{X_0}$\\
-	$m_5 =     X_2 \A \T{X_1} \A    X_0$\\
-	$m_6 =     X_2 \A     X_1 \A \T{X_0}$\\
-	$m_7 =     X_2 \A     X_1 \A    X_0$\\
+	\begin{multicols}{2}
+		Minterme:\\
+		$m_0 = \T{X_2} \A \T{X_1} \A \T{X_0}$\\
+		$m_1 = \T{X_2} \A \T{X_1} \A 	X_0$\\
+		$m_2 = \T{X_2} \A     X_1 \A \T{X_0}$\\
+		$m_3 = \T{X_2} \A     X_1 \A    X_0$\\
+		$m_4 =     X_2 \A \T{X_1} \A \T{X_0}$\\
+		$m_5 =     X_2 \A \T{X_1} \A    X_0$\\
+		$m_6 =     X_2 \A     X_1 \A \T{X_0}$\\
+		$m_7 =     X_2 \A     X_1 \A    X_0$\\
 
 
-	Maxterme:\\
-	$M_0 = \T{X_2} \V \T{X_1} \V \T{X_0}$\\
-	$M_1 = \T{X_2} \V \T{X_1} \V 	X_0$\\
-	$M_2 = \T{X_2} \V 	  X_1 \V \T{X_0}$\\
-	$M_3 = \T{X_2} \V     X_1 \V    X_0$\\
-	$M_4 =     X_2 \V \T{X_1} \V \T{X_0}$\\
-	$M_5 =     X_2 \V \T{X_1} \V    X_0$\\
-	$M_6 =     X_2 \V     X_1 \V \T{X_0}$\\
-	$M_7 =     X_2 \V     X_1 \V    X_0$\\
+		Maxterme:\\
+		$M_0 = \T{X_2} \V \T{X_1} \V \T{X_0}$\\
+		$M_1 = \T{X_2} \V \T{X_1} \V 	X_0$\\
+		$M_2 = \T{X_2} \V 	  X_1 \V \T{X_0}$\\
+		$M_3 = \T{X_2} \V     X_1 \V    X_0$\\
+		$M_4 =     X_2 \V \T{X_1} \V \T{X_0}$\\
+		$M_5 =     X_2 \V \T{X_1} \V    X_0$\\
+		$M_6 =     X_2 \V     X_1 \V \T{X_0}$\\
+		$M_7 =     X_2 \V     X_1 \V    X_0$\\
+	\end{multicols}
+\subsection*{$Y_1$:}
+	Konjunktive Normalform von $Y_1$ ist die Konjunktion (UND) der Maxterme, dessen Zeilen in der Wahrheitstabelle $0$ darstellen\\
 
-
-	Konjunktive Normalform von $Y_1$ ist die Konjunktion (UND) der Maxterme, dessen Zeilen in der Wertetabelle $0$ darstellen\\
-
-	$Y_1 = M_1 \A M_5 \A M_7 =
+	\begin{align*}
+	Y_1 = M_1 \A M_5 \A M_7 =
 		(\T{X_2} \V \T{X_1} \V 	X_0) \A    %M1
 		(    X_2 \V \T{X_1} \V    X_0) \A  %M5
-		(    X_2 \V     X_1 \V    X_0)$\\    %M7
+		(    X_2 \V     X_1 \V    X_0)\\    %M7
+	\end{align*}
 
-	Disjunktive Normalform von $Y_1$ ist die Disjunktion (ODER) der Minterme, dessen Zeilen in der Wertetabelle $1$ darstellen\\
+	Disjunktive Normalform von $Y_1$ ist die Disjunktion (ODER) der Minterme, dessen Zeilen in der Wahrheitstabelle $1$ darstellen\\
 
 	\begin{align*}
 		Y_1 &= m_0 \V m_2 \V m_3 \V m_4 \V m_6\\
