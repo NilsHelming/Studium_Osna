@@ -160,13 +160,14 @@ end TCL_Generic;&#13;
     <comp lib="0" loc="(430,20)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
+      <a name="label" val="Y"/>
     </comp>
     <comp lib="0" loc="(180,40)" name="Pin">
-      <a name="label" val="X1"/>
+      <a name="label" val="X2"/>
     </comp>
     <comp loc="(420,20)" name="NAND_NMOS"/>
     <comp lib="0" loc="(180,20)" name="Pin">
-      <a name="label" val="X0"/>
+      <a name="label" val="X1"/>
     </comp>
   </circuit>
   <circuit name="NAND_NMOS">
@@ -296,7 +297,7 @@ end TCL_Generic;&#13;
     <comp lib="0" loc="(340,80)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
-      <a name="label" val="f"/>
+      <a name="label" val="Y"/>
     </comp>
   </circuit>
   <circuit name="NOR_CMOS">
