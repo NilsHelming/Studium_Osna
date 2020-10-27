@@ -11,6 +11,8 @@
 !*.pdf
 !*.asc
 !*.png
+!*.circ
+!*.docx
 
 
 # and these REALLY DONT! #
