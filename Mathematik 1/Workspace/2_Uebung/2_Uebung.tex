@@ -1,0 +1,267 @@
+\documentclass[]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{%
+	ngerman,
+	ae,
+	times,  %% hier kann man die Schriftart einstellen
+	graphicx,
+	url,
+	scrlayer-scrpage,
+	lastpage,
+	mathtools,
+	geometry,
+	multicol,
+	cancel,
+	xcolor,
+	nicematrix,
+	xfrac,
+	tikz,
+	pgfplots,
+	amsmath,
+	amssymb,
+	colortbl,
+	centernot,
+	dsfont,
+	textgreek,
+	icomma}
+\usepackage[thinlines]{easybmat}
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{datavisualization.formats.functions}
+\usetikzlibrary{intersections}
+\pgfplotsset{compat=1.17}
+\newcommand{\del}[1]{\cancel{~#1~}}
+\NiceMatrixOptions{ last-col,code-for-last-col = \color{blue}\scriptstyle,light-syntax}
+\newlength\dlf
+\newcommand\alignedhighlight[3]{
+  % #1 = color
+  % #2 = before alignment
+  % #3 = after alignment
+  &
+  \begingroup
+  \settowidth\dlf{$\displaystyle #2$}
+  \addtolength\dlf{\fboxsep+\fboxrule}
+  \hspace{-\dlf}
+  \fcolorbox{#1}{#1}{$\displaystyle #2 #3$}
+  \endgroup
+}
+\newcommand{\reference}[1]{ \text{\small{\textcolor{blue}{(#1)}}} }
+
+\newcommand{\topic}{Mathematik 1 f"ur Informatiker}
+\newcommand{\subtopic}{"Ubungsblatt 2}
+\newcommand{\authors}{Nils Helming}
+
+%Head and Footnotes
+\setlength{\headheight}{2.1\baselineskip} %baselineskip = minimum distance bbetween the bottom of one line to another.
+\geometry{bottom = 3cm}
+\setlength{\headsep}{\baselineskip}
+\ihead[\topic\hrule]{\topic\hrule}
+\chead[\subtopic\\~]{\subtopic\\~}
+\ohead[\authors\\~]{\authors\\~}
+\ifoot[~]{~}
+\cfoot[~]{~}
+\ofoot[Seite \thepage~von \pageref{LastPage}]{Seite \thepage~von \pageref{LastPage}}
+
+%Paragraph spacings
+\setlength{\parindent}{0em} %em = with of an 'M'
+\setlength{\parskip}{1ex} %ex = height of an 'x'
+
+
+\newcommand{\V}{\lor}
+\newcommand{\A}{\land}
+\newcommand{\T}[1]{\overline{#1}}
+\newcommand{\eq}{\Leftrightarrow}
+\newcommand{\rarr}{\Rightarrow}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+\newcommand{\unit}[1]{\text{#1}}
+\newcommand{\fracunit}[2]{\frac{\unit{#1}}{\unit{#2}}}
+\newcommand{\textsq}[1]{\ensuremath{\text{#1}^2}}
+\newcommand{\textpow}[2]{\ensuremath{\text{#1}^{#2}}}
+\newcommand{\tdot}{\ensuremath{\cdot}}
+
+
+\begin{document}
+\section*{1. Aufgabe}
+\subsection*{(a)}
+	R ist nicht reflexiv, da es ein Element $1 \in A$ gibt, für welches $(1,1) \notin R$ gilt.
+
+	R ist nicht symmetrisch, denn $(3,6) \in R$ aber $(6,3) \notin R$.
+
+	R ist nicht transitiv, denn $(5,3) \in R \A (3,4) \in R$, aber $(5,4) \notin R$.
+
+	R ist nicht antisymmetrisch, denn $(1,2) \in R \A (2,1) \in R$, obwohl $1 \neq 2$.
+
+\subsection*{(b)}
+	Eine Äquivalenzrelation ist reflexiv, transitiv und symmetrisch. Für die Reflexivität müssen wir die Elemente $(1,1)$, $(4,4)$ und $(5,5)$ hinzufügen. Für die Transitivität fehlen zusätzlich $(4,6)$ und $(5,4)$. Und für die Symmetrie fügen wir noch $(6,3)$, $(5,4)$ und $(6,5)$ hinzu. (Durch das Hinzufügen der letzten drei Paare sind keine neuen Konflikte entstanden)
+
+	Zu bestimmen sind nun diese Äquivalenzklassen:
+	$[3] = \{3, 4, 5, 6\}$ und $[6] = \{3,5,6\}$
+\section*{2. Aufgabe}
+\subsection*{(a)}
+	Die Relation F ist eine Äquivalenzrelation, denn sie ist...\\
+	...reflexiv, da jeder Mensch in der selben Familie ist, wie er selbst.\\
+	...transitiv, denn wenn ein Mensch A in der selben Familie ist, wie B und dieser wiederrum in der selben Familie, wie C ist. Dann sind A und C auch in derselben Familie.\\
+	...symmetrisch, denn wenn A mit B in der selben Familie sind, dann ist auch B mit A in derselben Familie.\\
+	Die Äquivalenzklassen sind hier also die Familien.
+\subsection*{(b)}
+	Die Relation B ist keine Äquivalenzrelation, denn sie ist weder reflexiv noch symmetrisch. (z.B. Frau Mustermann hat einen Bruder. Sie ist aber nicht ihr eigener Bruder, noch ist sie der Bruder ihres Bruders.)
+\subsection*{(c)}
+	Die Relation A ist eine Äquivalenzrelation, denn sie ist...\\
+	...reflexiv, da jeder Mensch das selbe Alter hat, wie man selbst.\\
+	...transitiv, denn wenn ein Mensch A genauso alt ist, wie B und dieser wiederrum genauso alt, wie C ist. Dann sind A und C auch genauso alt.\\
+	...symmetrisch, denn wenn A mit B ein identishces Alter haben, dann muss auch B dasselbe Alter, wie A haben.\\
+	Die Äquivalenzklassen sind hier also die Altersgruppen/Jahrgänge?.
+
+\section*{3. Aufgabe}
+\subsection*{(a)}
+	$R_4 = \{(1,1);(1,2);(1,3);(1,4);(1,5)\}$\\
+	$R_5 = \{(a,a); (a,b); (a,c)\}$\\
+	$R_6 = \{\} = \emptyset$\\
+	$R_7 = \{(a,b); (a,c)\}$
+\subsection*{(b)}
+	$R_1$ ist eine Funktion, denn zu jedem Wert im Definitionsbereich wird durch die Relation genau ein Wert aus dem Wertebereich zugewiesen.\\
+
+	$R_2$ ist keine Funktion, denn nicht jeder Wert im Definitionsbereich steht in relation mit einem Wert aus dem Wertebereich und $a \in B$ steht in relation mit mehreren Werten aus dem Wertebereich.\\
+
+	$R_3$ ist keine Funktion, denn nicht jeder Wert im Definitionsbereich steht in relation mit einem Wert aus dem Wertebereich.\\
+
+	$R_4$ ist keine Funktion, denn nicht jeder Wert im Definitionsbereich steht in relation mit einem Wert aus dem Wertebereich und $1 \in A$ steht in relation mit mehreren Werten aus dem Wertebereich.\\
+
+	$R_5$ ist keine Funktion, denn nicht jeder Wert im Definitionsbereich steht in relation mit einem Wert aus dem Wertebereich und $a \in B$ steht in relation mit mehreren Werten aus dem Wertebereich.\\
+
+	$R_6$ ist keine Funktion, denn nicht jeder Wert im Definitionsbereich steht in relation mit einem Wert aus dem Wertebereich.\\
+
+	$R_7$ ist keine Funktion, denn nicht jeder Wert im Definitionsbereich steht in relation mit einem Wert aus dem Wertebereich.\\
+
+\section*{4. Aufgabe}
+\subsection*{(a)}
+	$T$ ist reflexiv, denn jedes $x \in M$ Teilt sich selbst.\\
+
+	$T$ ist transitiv, da bei gegebenen $(x,y) \in T$ und $(y,z) \in T$ gilt:
+	$\exists k \in \mathbb{Z}: k \cdot x = y$ und $\exists l \in \mathbb{Z}: l \cdot y = z$ aber daraus folgt: $z = l \cdot y = l \cdot (k \cdot x) = (l \cdot k) \cdot x \rarr (x,z) \in T$ da $n = (l \cdot k) \in \mathbb{Z}$.\\
+
+	$T$ ist nicht symmetrisch, denn z.B. $(1,2) \in T$ aber $(2,1) \notin T$.\\
+
+	$T$ ist antisymmetrisch, da aus $(x,y) \in T$ und $(y,x) \in T$ folgt: $\exists k \in \mathbb{Z}: k \cdot x = y$ und $\exists l \in \mathbb{Z}: l \cdot y = x$. Also $x = l \cdot y = l \cdot (k \cdot x) = (l \cdot k) \cdot x \rarr 1 = l \cdot k \rarr k = \frac{1}{l}$ Was mit $k \in \mathbb{Z}$ nur für $k = l = 1$ gelten kann. Damit ist $y = k \cdot x = x$
+
+	Also ist $T$ eine Ordnungsrelation, aber keine Äquivalenzrelation.
+\subsection*{(b)}
+
+
+\section*{5. Aufgabe}
+\newpage
+\section*{6. Aufgabe}
+\subsection*{(a) $\forall n \in \mathbb{N} \text{ gilt: } 11|10^{2n} -1 $}
+Behauptung:
+\begin{align*}
+	 && 11&|10^{2 \cdot n}-1 &&\\
+	 \eq&& \forall n \in \mathbb{N} \exists m \in \mathbb{N} &\text{ mit } 10^{2n}-1 = 11\cdot m  &&\\
+\end{align*}
+Induktionsanfang (Anker): ($n=1$)\\
+\begin{align*}
+	 && 10^{2 \cdot 1}-1 &= 100 - 1 &&\\
+	 && &= 99 &&\\
+	 && &= 11 \cdot 9 &&\\
+	 && &\rarr m = 9 &&\\
+\end{align*}
+
+Induktionsschritt: ($k~ -> k+1$)\\
+Induktionsvorraussetzung: Behauptung gilt für $n=k$\\
+$11|10^{2\cdot k} - 1$ d.h. \\
+$\exists i \in \mathbb{N} \text{ mit } 10^{2\cdot k}-1 = 11\cdot i$
+
+Induktionsbehauptung: Behauptung gilt für $n = k+1$\\
+$11|10^{2\cdot (k+1)} - 1$ d.h. \\
+$\exists j \in \mathbb{N} \text{ mit } 10^{2\cdot (k+1)}-1 = 11\cdot j$
+
+
+Beweis: (Zeige Induktionsbehauptung unter verwendung der Induktionsvorraussetzung)
+\begin{align*}
+	&& 10^{2\cdot (k+1)}-1 &= 10^{2k +2}-1 &&\\
+	&&  &= 10^{2k +2}-1 &&\\
+	&&  &= (10^{2k} \cdot 10^2) -1 &&\\
+	&&  &= ((10^{2k} -1+1)\cdot 10^2) -1 &&\\
+	&&  &= (((10^{2k} -1)+1)\cdot 10^2) -1 &&\\
+	&&  &= (((11 \cdot i)+1)\cdot 10^2) -1 &&\\
+	&&  &= ((11i+1)\cdot 10^2) -1 &&\\
+	&&  &= (11 \cdot 100i+100) -1 &&\\
+	&&  &= 11 \cdot 100i+99 &&\\
+	&&  &= 11 \cdot 100i+11 \cdot 9 &&\\
+	&&  &= 11(100i+ 9)&&\\
+	\text{mit $j:=100i+9$}&&  &= 11 \cdot j&&\\
+\end{align*}
+
+\newpage
+\subsection*{(c) $\forall n \in \mathbb{N} \text{ gilt: } \sum_{i=1}^{n}(2\cdot i-1) = n^2 $}
+Behauptung:
+\begin{align*}
+	 && \forall n \in \mathbb{N} \text{ gilt: } \sum_{i=1}^{n}(2\cdot i-1) &= n^2 &&\\
+\end{align*}
+
+Induktionsanfang: (Anker) ($n = 1$)
+\begin{align*}
+	 && \sum_{i=1}^{1}(2\cdot i-1) &= 2 \cdot 1 - 1 &&\\
+	 && &= 1 &&\\
+	 && &= 1^2 &&\\
+\end{align*}
+
+Induktionsschritt: ($k~ -> k+1$)\\
+Induktionsvorraussetzung: Behauptung gilt für $n = k$\\
+\begin{align*}
+	 && \sum_{i=1}^{k}(2\cdot i-1) &= k^2 &&\\
+\end{align*}
+
+
+Induktionsbehauptung: Behauptung gilt für $n = k+1$\\
+\begin{align*}
+	 && \sum_{i=1}^{k+1}(2\cdot i-1) &= (k+1)^2 &&\\
+\end{align*}
+Beweis: (Zeige Induktionsbehauptung unter verwendung der Induktionsvorraussetzung)\\
+\begin{align*}
+	 && \sum_{i=1}^{k+1}(2\cdot i-1) &= (2\cdot 1 -1) + (2\cdot 2 -1)+ (2\cdot 3 -1) + \dots +(2\cdot k -1) +(2\cdot (k+1) -1)&&\\
+	 && &= \sum_{i=1}^{k}(2\cdot i-1) +(2\cdot (k+1) -1)&&\\
+	 && &= k^2 +(2\cdot (k+1) -1)&&\\
+	 && &= k^2 +(2k+2 -1)&&\\
+	 && &= k^2 +(2k+1)&&\\
+	 && &= k^2 +2k+1&&\\
+	 && &= (k+1)^2&&\\
+\end{align*}
+
+\newpage
+\subsection*{(d) $\forall n \in \mathbb{N}, n \geq 4 \text{ gilt: } 2^n \geq n^2$}
+Behauptung:
+\begin{align*}
+	 && \forall n \in \mathbb{N}, n \geq 4 \text{ gilt: } 2^n &\geq n^2 &&\\
+\end{align*}
+
+Induktionsanfang (Anker): ($n=4$)
+\begin{align*}
+	 && 2^4 &= 16 &&\\
+	 &&  &= 4^2 &&\\
+	 &&  &\geq 4^2 &&\\
+\end{align*}
+
+Induktionsschritt: ($k~ -> k+1$)\\
+Induktionsvorraussetzung: Behauptung gilt für $n=k$\\
+\begin{align*}
+	 && 2^k &\geq k^2 &&\\
+\end{align*}
+
+Induktionsbehauptung: Behauptung gilt für $n=k+1$\\
+\begin{align*}
+	 && 2^{k+1} &\geq (k+1)^2 &&\\
+\end{align*}
+
+Beweis: (Zeige Induktionsbehauptung unter verwendung der Induktionsvorraussetzung)\\
+\begin{align*}
+	 && 2^{k+1} &= 2^k \cdot 2^1 &&\\
+	 && &\geq k^2 \cdot 2^1 &&\\
+\end{align*}
+
+
+
+
+
+\end{document}
