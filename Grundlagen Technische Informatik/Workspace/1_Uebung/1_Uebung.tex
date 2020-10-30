@@ -190,18 +190,22 @@
 		\\
 		\rarr&& F &= (F1 \V F2 \V F3) \A F4 &&\\
 		&&  &= B \V F3 &&\\
+		&& &= B \V (A \A \T{B} \A \T{C}) &&\\
+		&& &= (B \V A) \A (B \V \T{B}) \A (B \V \T{C})&&\\
+		&& &= (B \V A) \A (B \V \T{C})&&\\
+		&& &= B \V (A \A \T{C})&&\\
 	\end{align*}
 	\newcommand{\dbl}[2]{\begin{matrix}#1 \\ #2\end{matrix}}
-	\begin{center}$\begin{BMAT}(){c|c|c|c|c|c|c}{c|cccccccc}
-		A & B & C & \T{B} 	& \T{C}	&\dbl{F3=}{A \A \T{B} \A \T{C}}	& \dbl{F =}{B \V F3}\\
-		0 & 0 & 0 & 1 		& 1		& 0								& 0\\
-		0 & 0 & 1 & 1 		& 0		& 0								& 0\\
-		0 & 1 & 0 & 0 		& 1		& 0								& 1\\
-		0 & 1 & 1 & 0 		& 0		& 0								& 1\\
-		1 & 0 & 0 & 1 		& 1		& 1								& 1\\
-		1 & 0 & 1 & 1 		& 0		& 0								& 0\\
-		1 & 1 & 0 & 0 		& 1		& 0								& 1\\
-		1 & 1 & 1 & 0 		& 0		& 0								& 1\\
+	\begin{center}$\begin{BMAT}(){c|c|c|c|c|c|c|c}{c|cccccccc}
+		A & B & C & \T{B} 	& \T{C}	&\dbl{F3=}{A \A \T{B} \A \T{C}}	& \dbl{F =}{B \V F3} & \dbl{F =}{B \V (A \A \T{C})}\\
+		0 & 0 & 0 & 1 		& 1		& 0								& 0 & 0\\
+		0 & 0 & 1 & 1 		& 0		& 0								& 0 & 0\\
+		0 & 1 & 0 & 0 		& 1		& 0								& 1 & 1\\
+		0 & 1 & 1 & 0 		& 0		& 0								& 1 & 1\\
+		1 & 0 & 0 & 1 		& 1		& 1								& 1 & 1\\
+		1 & 0 & 1 & 1 		& 0		& 0								& 0 & 0\\
+		1 & 1 & 0 & 0 		& 1		& 0								& 1 & 1\\
+		1 & 1 & 1 & 0 		& 0		& 0								& 1 & 1\\
 	\end{BMAT}$\end{center}
 \newpage
 \section*{Aufgabe 5:}
@@ -222,16 +226,16 @@
 \subsection*{(c)}
 	folgende Maxterme sind hier relevant:
 	\begin{align*}
-		&& M_0 &= \T{A} \A \T{B} \A \T{C} &&\\
-		&& M_3 &= \T{A} \A B \A C &&\\
-		&& M_4 &= A \A  \T{B} \A \T{C} &&\\
-		&& M_5 &= A \A \T{B} \A C &&\\
-		&& M_6 &= A \A B \A \T{C} &&\\
+		&& M_0 &= \T{A} \V \T{B} \V \T{C} &&\\
+		&& M_3 &= \T{A} \V B \V C &&\\
+		&& M_4 &= A \V  \T{B} \V \T{C} &&\\
+		&& M_5 &= A \V \T{B} \V C &&\\
+		&& M_6 &= A \V B \V \T{C} &&\\
 	\end{align*}
 	Die KNF ist dann die Konjunktion der Maxterme:
 	\begin{align*}
 		&& Y &= M_0 \A M_3 \A M_4 \A M_5 \A M_6 &&\\
-		&& &= (\T{A} \A \T{B} \A \T{C}) \A (\T{A} \A B \A C) \A (A \A  \T{B} \A \T{C}) \A (A \A \T{B} \A C) \A (A \A B \A \T{C}) &&\\
+		&& &= (\T{A} \V \T{B} \V \T{C}) \A (\T{A} \V B \V C) \A (A \V  \T{B} \V \T{C}) \A (A \V \T{B} \V C) \A (A \V B \V \T{C}) &&\\
 	\end{align*}
 \subsection*{(d)}
 	\begin{center}$\begin{BMAT}(){c|c|c|c|c|c|c}{c|cccccccc}
