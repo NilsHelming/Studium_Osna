@@ -9,9 +9,10 @@
  * -----------------------------------------------------------------------------
  */
 
-#include "Ringliste.h"
+#include "Ringliste.cpp"
 #include <iostream>
 #include <iomanip>
+
 using namespace std;
 
 
