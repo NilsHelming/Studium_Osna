@@ -1,64 +1,62 @@
 #include "Fifo.h"
 
+Fifo::Fifo(Fifo& cpy){
+
+}
+
+
 Fifo::~Fifo(){
-    Fifo::element* next;
-    while(this->top != nullptr){
-        Fifo::element* _top_ptr = this->top;
-        Fifo::element& _top = *_top_ptr;
-        Fifo::element* _top_next = ++_top;
-        next = ++*(this->top);
-        delete (this->top);
-        top = next;
-    }
+    clear();
 }
 
 Fifo& Fifo::operator<<(const std::string& val){
     if(this->top == nullptr){
-        this->top = new Fifo::element(val);
-        return *this;
+        this->top = new FifoElement(val);
     } else {
-        //finde das letzte Element
-        Fifo::element* last = this->top;
-        while(++*last != nullptr)
-            Fifo::element* last = ++*last;
+        FifoElement* last = this->top;
+        while(last->GetNext() != nullptr)
+            last = last->GetNext();
 
-        // ++*last = new Fifo::element(val); //setze next des letzten Elements.
-        return *this;
+        last->SetNext(new FifoElement(val));
     }
+    return *this;
 }
 
 Fifo& Fifo::operator>>(std::string& output){
-    //haben wir etwas auszugeben??
-    if(this->top == nullptr)
-        throw std::string("Liste ist Leer!");
+    if (this->top == nullptr)
+        throw new std::string("Fifo ist leer!");
 
-    //lese den ersten Eintrag in unserer Liste in den output:
-    output = **this->top;//pointer auf top -> top-Element -> String eintrag.
-    //lösche den ersten Eintrag in unserer Liste: (den gerade gelesenen Eintrag)
-    Fifo:element* temp = this->top;
-    this->top = ++*this->top;
-    delete temp;
+    FifoElement* first = this->top;
+    output = *first;
+
+    this->top = this->top->GetNext();
+    delete first;
 
     return *this;
 }
 
 Fifo::operator int () const{
-    int counter {0};
-
-    Fifo::element* next = this->top;
-    while(next != nullptr){
-        ++counter;
-        next = ++*next;
+    if(this->top == nullptr){
+        return 0;
+    } else {
+        int counter {1};
+        FifoElement* last = this->top;
+        while(last->GetNext() != nullptr){
+            last = last->GetNext();
+            ++counter;
+        }
+        return counter;
     }
-    return counter;
 }
 
-Fifo::element::FifoElement(const std::string& value): value(value){};
-std::string& Fifo::element::operator*(){
-    return this->value;
+bool Fifo::empty(){
+    return this->top == nullptr;
 }
-Fifo::element* Fifo::element::operator++(){ //prefix
-    FifoElement thi = *this;
-
-    return this->next;
+void Fifo::clear(){
+    FifoElement* first;
+    while(!empty()){
+        first = this->top;
+        this->top = first->GetNext();
+        delete first;
+    }
 }

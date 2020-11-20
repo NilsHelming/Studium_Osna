@@ -34,7 +34,7 @@ int main(int nParameter, char *parameter[]) {
         cout << "> Fifo aus Textdatei fuellen" << endl;
         {
             string token;
-            ifstream in((nParameter>1) ? parameter[1] : "zitat");
+            ifstream in((nParameter>1) ? parameter[1] : "zitat.txt");
             if (!in) throw "Kann Datei nicht oeffnen";
             while (1) {
                 in >> token;
