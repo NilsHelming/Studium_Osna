@@ -1,0 +1,191 @@
+\documentclass[]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{%
+	ngerman,
+	ae,
+	times,  %% hier kann man die Schriftart einstellen
+	graphicx,
+	url,
+	scrlayer-scrpage,
+	lastpage,
+	mathtools,
+	geometry,
+	multicol,
+	cancel,
+	xcolor,
+	nicematrix,
+	xfrac,
+	tikz,
+	pgfplots,
+	amsmath,
+	amssymb,
+	colortbl,
+	centernot,
+	dsfont,
+	textgreek,
+	icomma}
+\usepackage[thinlines]{easybmat}
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{datavisualization.formats.functions}
+\usetikzlibrary{intersections}
+\pgfplotsset{compat=1.17}
+\newcommand{\del}[1]{\cancel{~#1~}}
+\NiceMatrixOptions{ last-col,code-for-last-col = \color{blue}\scriptstyle,light-syntax}
+\newlength\dlf
+\newcommand\alignedhighlight[3]{
+  % #1 = color
+  % #2 = before alignment
+  % #3 = after alignment
+  &
+  \begingroup
+  \settowidth\dlf{$\displaystyle #2$}
+  \addtolength\dlf{\fboxsep+\fboxrule}
+  \hspace{-\dlf}
+  \fcolorbox{#1}{#1}{$\displaystyle #2 #3$}
+  \endgroup
+}
+\newcommand{\reference}[1]{ \text{\small{\textcolor{blue}{(#1)}}} }
+
+\newcommand{\topic}{Mathematik 1 f"ur Informatiker}
+\newcommand{\subtopic}{"Ubungsblatt 4}
+\newcommand{\authors}{Nils Helming}
+
+%Head and Footnotes
+\setlength{\headheight}{2.1\baselineskip} %baselineskip = minimum distance bbetween the bottom of one line to another.
+\geometry{bottom = 3cm}
+\setlength{\headsep}{\baselineskip}
+\ihead[\topic\hrule]{\topic\hrule}
+\chead[\subtopic\\~]{\subtopic\\~}
+\ohead[\authors\\~]{\authors\\~}
+\ifoot[~]{~}
+\cfoot[~]{~}
+\ofoot[Seite \thepage~von \pageref{LastPage}]{Seite \thepage~von \pageref{LastPage}}
+
+%Paragraph spacings
+\setlength{\parindent}{0em} %em = with of an 'M'
+\setlength{\parskip}{1ex} %ex = height of an 'x'
+
+
+\newcommand{\V}{\lor}
+\newcommand{\A}{\land}
+\newcommand{\T}[1]{\overline{#1}}
+\newcommand{\eq}{\Leftrightarrow}
+\newcommand{\rarr}{\Rightarrow}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+\newcommand{\unit}[1]{\text{#1}}
+\newcommand{\fracunit}[2]{\frac{\unit{#1}}{\unit{#2}}}
+\newcommand{\textsq}[1]{\ensuremath{\text{#1}^2}}
+\newcommand{\textpow}[2]{\ensuremath{\text{#1}^{#2}}}
+\newcommand{\tdot}{\ensuremath{\cdot}}
+
+
+\begin{document}
+
+\section*{1. Aufgabe}
+\subsection*{a)}
+	\begin{align*}
+		&& |3r-6| &= r+2&&\\
+		&& |3(r-2)| &= r+2&&\\
+		&& 3|r-2| &= r+2&&\\
+	\end{align*}
+	\begin{center}\begin{minipage}{0.45\textwidth}
+		1. Fall: $r \ge 2 \eq r \in [2,+\infty)$
+		\begin{align*}
+			&& 3|r-2| &= r+2 &&\\
+			&\eq& 3(r-2) &= r+2 &&\\
+			&\eq& 3r-6 &= r+2 &&|-r+6\\
+			&\eq& 2r &= 8 &&|:2\\
+			&\eq& r &= 4 &&\\
+			&\rarr& \mathbb{L}_1 &= \{4\} &&\\
+		\end{align*}
+	\end{minipage} ~\vline~ \begin{minipage}{0.45\textwidth}
+		2. Fall: $r < 2 \eq r \in (-\infty,2)$
+		\begin{align*}
+			&& 3|r-2| &= r+2 &&\\
+			&\eq& -3(r-2) &= r+2 &&\\
+			&\eq& -3r+6 &= r+2 &&|-r-6\\
+			&\eq& -4r &= -4 &&|:(-4)\\
+			&\eq& r &= -1 &&\\
+			&\rarr& \mathbb{L}_2 &= \{-1\} &&\\
+		\end{align*}
+	\end{minipage}\end{center}
+	\begin{align*}
+		&\rarr& \mathbb{L} &= \mathbb{L}_1 \cup \mathbb{L}_2 = \{-1,4\} &&\\
+	\end{align*}
+
+\section*{2. Aufgabe}
+\subsection*{a)}
+	\begin{align*}
+		KEINE AHNUNG
+	\end{align*}
+\section*{3. Aufgabe}
+\subsection*{(1)}
+	$\star$ ist kommutativ, denn hier ist in der Verknüpfungstabelle eine Spiegelsymmetrie über die Diagonale zu beobachten.\\
+	$\circ$ hingegen ist nicht kommutativ, denn z.B. $a \circ b \neq b \circ a$.
+
+\section*{4. Aufgabe}
+\subsection*{(1)}
+	Zu zeigen ist: a) $\forall a \in \mathbb{N}_0: a \circ 0 = a$ und b) $\forall a \in \mathbb{N}_0: a \circ a = 0$\\
+	a)
+	\begin{align*}
+		&& a \circ 0 &= |a-0| &&\\
+		&& &= |a|-|0| &&\\
+		&\text{da $a\in\mathbb{N}_0$}& &= a-0 &&\\
+		&& &= a &&\\
+	\end{align*}
+	b)
+	\begin{align*}
+		&& a \circ a &= |a-a| &&\\
+		&& &= |0| &&\\
+		&& &= 0 &&\\
+	\end{align*}
+
+\section*{5. Aufgabe}
+\subsection*{a)}
+Assoziativgesetz der Addition:
+\begin{align*}
+	&& \T{1} + (\T{2} + \T{4}) &= \T{1} + \T{1} &&\\
+	&& &= \T{2} &&\\
+	&& (\T{1} + \T{2}) + \T{4} &= \T{3} + \T{4} &&\\
+	&& &= \T{2} &&\\
+	&\rarr& \T{1} + (\T{2} + \T{4}) &= (\T{1} + \T{2}) + \T{4} &&\\
+\end{align*}
+Kommutativgesetz der Multiplikation:
+\begin{align*}
+	&& \T{2} \bullet \T{4} &= \T{3} &&\\
+	&& \T{4} \bullet \T{2} &= \T{3} &&\\
+	&\rarr& \T{2} \bullet \T{4} &= \T{4} \bullet \T{2} &&\\
+\end{align*}
+Distributivgesetz:
+\begin{align*}
+	&& \T{2} \bullet (\T{3} + \T{4}) &= \T{2} \bullet \T{2} &&\\
+	&& &= \T{4} &&\\
+	&& (\T{2} \bullet \T{3}) + (\T{2} \bullet \T{4}) &= \T{1} + \T{3} &&\\
+	&& &= \T{4} &&\\
+	&\rarr& \T{2} \bullet (\T{3} + \T{4}) &= (\T{2} \bullet \T{3}) + (\T{2} \bullet \T{4}) &&\\
+\end{align*}
+
+\section*{6. Aufgabe}
+\subsection*{a)}
+	\begin{align*}
+		&& (\T{12} + \T{9})^2 &= (\T{12+9})^2 &&\\
+		&& &= (\T{21})^2 &&\\
+		&& &= (\T{4})^2 &&\\
+		&& &= \T{4^2} &&\\
+		&& &= \T{16} &&\\
+		\\
+		&& \T{12}^2 + \T{2} \cdot \T{12} \cdot \T{9} + \T{9}^2  &= \T{12^2} + \T{2 \cdot 9} \cdot \T{12} + \T{9^2} &&\\
+		&& &= \T{144} + \T{18} \cdot \T{12}  + \T{81} &&\\
+		&& &= \T{8} + \T{1} \cdot \T{12}  + \T{13} &&\\
+		&& &= \T{8} + \T{12}  + \T{13} &&\\
+		&& &= \T{8+12+13} &&\\
+		&& &= \T{33} &&\\
+		&& &= \T{16} &&\\
+		\\
+		&\rarr& (\T{12} + \T{9})^2 &= \T{12}^2 + \T{2} \cdot \T{12} \cdot \T{9} + \T{9}^2 &&\\
+	\end{align*}
+
+\end{document}
