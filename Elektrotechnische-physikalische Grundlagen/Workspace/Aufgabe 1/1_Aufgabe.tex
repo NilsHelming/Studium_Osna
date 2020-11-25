@@ -48,7 +48,7 @@
 \newcommand{\reference}[1]{ \text{\small{\textcolor{blue}{(#1)}}} }
 
 \newcommand{\topic}{Elektrotechnisch-phys. Grundlagen}
-\newcommand{\subtopic}{Aufgaben 1.1 - 1.29}
+\newcommand{\subtopic}{Übungsaufgaben}
 \newcommand{\authors}{Nils Helming}
 
 %Head and Footnotes
@@ -299,7 +299,7 @@
 
 \section*{Aufgabe 1.17}
 \fbox{\includegraphics[scale=0.7]{Lösungsbilder/Ueb1_17.png}}\par
-	\includegraphics[scale=0.6]{Skizze_A1_17.png}\par
+	\includegraphics[scale=0.6]{Bilder/Skizze_A1_17.png}\par
 	$\frac{1}{R_{par}} = \sum_{i=1}^{n} \frac{1}{R_i}$ Gesamtwiderstand von Widerständen in Parallelschaltung \\
 	$R_{rei} = \sum_{i=1}^{n} {R_i}$ Gesamtwiderstand von Widerständen in Reihenschaltung \\
 
@@ -419,4 +419,87 @@
 	Energiemengenwirkungsgrad: zusätzlich wird Spannung mit betrachtet (Spannung*Strom*Zeit)
 
 	Energie ist für Wirtschaftlichkeit wichtiger, diese kann tatsächlich verwendet werden
+
+\section*{Aufgabe 3.1}
+\fbox{\includegraphics[scale=0.6]{Lösungsbilder/Ueb3_1.png}}\par
+	\begin{align*}
+		&\text{Stromdichte}& J &= \frac{I}{A} &&\\
+		&& &= \frac{100\unit{A}}{0,45\unit{\textsq{dm}}} &&\\
+		&& &= \frac{100\unit{A}}{45\unit{\textsq{cm}}} &&\\
+		&& &= 2,22\fracunit{A}{\textsq{cm}} &&\\
+		\\
+		&& R &= \frac{\rho \cdot l}{A} &&\\
+		&&  &= \frac{0,12 \fracunit{\textOmega\textsq{mm}}{m} \cdot 2.000\unit{m}}{4500\unit{\textsq{mm}}} &&\\
+		&&  &= \frac{2,4 \fracunit{\textOmega\textsq{mm}}{m} \cdot \unit{m}}{45\unit{\textsq{mm}}} &&\\
+		&&  &= \frac{2,4 \unit{\textOmega}}{45} &&\\
+		&&  &= 53,33 \unit{m\textOmega}&&\\
+		\\
+		&& U &= R \cdot I &&\\
+		&&  &= 53,33 \unit{m\textOmega} \cdot 100\unit{A} &&\\
+		&&  &= 5333 \unit{mV}&&\\
+		\\
+		&& E &= \frac{U}{l} &&\\
+		&&  &= \frac{5333 \unit{mV}}{2.000 \unit{m}} &&\\
+		&&  &= 2,7\fracunit{mV}{m} &&\\
+	\end{align*}
+\section*{Aufgabe 3.2}
+\fbox{\includegraphics[scale=0.6]{Lösungsbilder/Ueb3_2.png}}\par
+	\includegraphics[scale=0.1]{Bilder/Skizze_A3_2.jpg}\\
+	Vier Kondensatoren, die parallel geschaltet sind. Also die entstehenden Kapazitäten der Kondensatoren aufaddieren. Mittels: $C = \frac{ \epsilon_r \cdot A}{d}$
+
+	Da 1,3,5 mit dem pluspol verbunden ist, liegen auf diesen positive Ladungen. Dementsprechend liegen auf 2,4 die negativen Ladungen.
+	Kapazität * Spannung
+\section*{Aufgabe 3.3}
+\fbox{\includegraphics[scale=0.6]{Lösungsbilder/Ueb3_3.png}}\par
+	\includegraphics[scale=0.1]{Bilder/Skizze_A3_3.jpg}\\
+	Bei der Entladung eines Kondensators gilt: $u_C = U_0e^{-\frac{t}{RC}}$ Wobei in unserem Fall diese Werte gegeben sind:\\
+	$u_C = 4\unit{V}$; $U_0 = 20\unit{V}$; $t = 5\unit{s}$; $C = 1\unit{\textmu F}$; Also:
+	\begin{align*}
+		&& u_C &= U_0e^{-\frac{t}{RC}} &&\\
+		&\eq& 4\unit{V} &= 20\unit{V} \cdot e^{-\frac{5\unit{s}}{R \cdot 1\unit{\textmu F}}} &&\\
+		&\text{angenommen $R = x \cdot 1 \unit{\textOmega}$}& \frac{1}{5} &= e^{-\frac{5\unit{s \tdot V}}{x\unit{\textOmega} \cdot 10^{-6}\unit{As}}} &&\\
+		&\eq& \frac{1}{5} &= e^{-\frac{5 * 10^{6}}{x}} &&\\
+		&\eq& \frac{1}{5} &= \left(e^{-5 * 10^{6}}\right)^{\frac{1}{x}} &&\\
+		&\eq& \frac{1}{x} &= \log_{e^{-5*10^6}}\left(\frac{1}{5}\right) &&\\
+		&&  &= \frac{\ln\left(\frac{1}{5}\right)}{\ln(e^{-5*10^6})} &&\\
+		&\eq&  x&= \frac{-5*10^6}{-\ln(5)} &&\\
+		&&  &= \frac{5*10^6}{1,61} &&\\
+		&&  &= 3,11*10^6 &&\\
+		&\rarr&  R&= 3,11*10^6\unit{\textOmega} &&\\
+	\end{align*}
+
+\section*{Aufgabe 4.1}
+\fbox{\includegraphics[scale=0.6]{Lösungsbilder/Ueb4_1.png}}\par
+	\includegraphics[scale=0.1]{Bilder/Skizze_A4_1.jpg}\\
+	Sizze: zeigt Aufbau, wie in (a); In (b) würden $H_1$ und $H_2$ in die selbe Richtung wirken!
+\subsection*{(a)}
+	\begin{align*}
+		&& H&= \frac{I}{2\pi r} &&\\
+		&& H_{ges} &= H_1 - H_2 &&\\
+		&& H_1 &= \frac{25\unit{A}}{2\pi \cdot 0,1\unit{m}}&&\\
+		&& &= 39,8 \fracunit{A}{m}&&\\
+		&& H_2 &= \frac{25\unit{A}}{2\pi \cdot 0,25\unit{m}}&&\\
+		&& &= 15,9 \fracunit{A}{m}&&\\
+		&\rarr& H_{ges} &= H_1 - H_2&&\\
+		&& &= 39,8 \fracunit{A}{m} - 15,9 \fracunit{A}{m}&&\\
+		&& &= 23,9 \fracunit{A}{m}&&\\
+	\end{align*}
+\subsection*{(b)}
+	Aus den schon errechneten Werten aus (a) können wir auch dies bestimmen:
+	\begin{align*}
+		&& H_{ges} &= H_1 + H_2 &&\\
+		&& &= 39,8 \fracunit{A}{m} + 15,9 \fracunit{A}{m}&&\\
+		&& &= 55,7 \fracunit{A}{m}&&\\
+	\end{align*}
+\section*{Aufgabe 4.2}
+\fbox{\includegraphics[scale=0.6]{Lösungsbilder/Ueb4_2.png}}\par
+\section*{Aufgabe 4.3}
+\fbox{\includegraphics[scale=0.6]{Lösungsbilder/Ueb4_3.png}}\par
+Wenn man sich nur die obere hälfte des Bildes ansieht, ist diese Aufgabe sehr ähnlich zu Aufgabe 4.2 und damit auch vergleichbar zu lösen!
+\section*{Aufgabe 4.4}
+\fbox{\includegraphics[scale=0.6]{Lösungsbilder/Ueb4_4.png}}\par
+\section*{Aufgabe 4.5}
+\fbox{\includegraphics[scale=0.6]{Lösungsbilder/Ueb4_5.png}}\par
+
+
 \end{document}
