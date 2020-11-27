@@ -6,6 +6,7 @@ class FifoElement{
     std::string value;
 public:
     FifoElement(const std::string& v):next(nullptr), value(v){};
+    FifoElement(FifoElement& cpy):next(nullptr), value(cpy.value){};
 
     FifoElement* GetNext(){return next;};
     void SetNext(FifoElement* elem){next = elem;};
@@ -18,17 +19,19 @@ private:
 
 public:
     Fifo() = default;
-    Fifo(Fifo&);
+    Fifo(const Fifo&);
     ~Fifo();
 
     Fifo& operator<<(const std::string&);
+    Fifo& operator<<(Fifo&);
     Fifo& operator>>(std::string&);
     Fifo& operator= (const Fifo&);
 
     operator int () const;
 
-    bool empty();
+    bool empty() const;
     void clear();
+    std::string concat(const std::string& = ", ");
 
     //für die Testfälle:
     std::string pop(){std::string x;*this >> x; return x;}

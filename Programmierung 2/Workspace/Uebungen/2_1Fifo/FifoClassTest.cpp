@@ -34,7 +34,7 @@ int main(int nParameter, char *parameter[]) {
         cout << "> Fifo aus Textdatei fuellen" << endl;
         {
             string token;
-            ifstream in((nParameter>1) ? parameter[1] : "zitat.txt");
+            ifstream in("E:\\OneDrive\\Dokumente\\Studium_Osna\\Programmierung 2\\Workspace\\Uebungen\\2_1Fifo\\zitat.txt");
             if (!in) throw "Kann Datei nicht oeffnen";
             while (1) {
                 in >> token;
@@ -80,7 +80,7 @@ int main(int nParameter, char *parameter[]) {
         cout << " >>> " << error << endl;
         return 3;
     } catch (...) {
-        cout << "> Failure: Unbekannte Ausnahme" << endl;
+        cout << "> Failure: Unbekannte Ausnahme1" << endl;
         return 3;
     }
 
@@ -96,7 +96,7 @@ int main(int nParameter, char *parameter[]) {
             cout << "> Erwartete Ausnahme wegen Fifo-Unterlauf:" << endl;
             cout << " >>> " << error << endl;
         } catch (...) {
-            cout << "> Failure: Unbekannte Ausnahme" << endl;
+            cout << "> Failure: Unbekannte Ausnahme2" << endl;
             return 3;
         }
         try {
@@ -112,7 +112,7 @@ int main(int nParameter, char *parameter[]) {
             cout << "> Erwartete Ausnahme wegen Fifo-Unterlauf:" << endl;
             cout << " >>> " << error << endl;
         } catch (...) {
-            cout << "> Failure: Unbekannte Ausnahme" << endl;
+            cout << "> Failure: Unbekannte Ausnahme3" << endl;
             return 3;
         }
     }

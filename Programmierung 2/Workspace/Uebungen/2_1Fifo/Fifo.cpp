@@ -1,16 +1,46 @@
 #include "Fifo.h"
+#include "sstream"
 
-Fifo::Fifo(Fifo& cpy){
+// int main() {
+//     Fifo f;
+//     f << "asdf";
+//     f << "dsda";
+//     f << "wasd";
+//     f << "rasd";
 
+//     Fifo b{f};
+
+//     b.clear();
+
+
+//     std::cout << f.concat() << std::endl;
+// }
+
+Fifo::Fifo(const Fifo& cpy){
+    *this = cpy; //Verweis auf Zuweisungsoperator.
 }
 
+Fifo& Fifo::operator= (const Fifo& cpy){
+    if(this == &cpy) return *this; //Selbstzuweisung verhindern.
+
+    this->clear();
+
+    FifoElement* obj = cpy.top;
+    do{
+        //FifoElement* -> FifoElement -> string
+        *this << *obj; //cast from FifoElement to string
+        obj = obj->GetNext();
+    } while(obj != nullptr);
+
+    return *this;
+};
 
 Fifo::~Fifo(){
     clear();
 }
 
 Fifo& Fifo::operator<<(const std::string& val){
-    if(this->top == nullptr){
+    if(empty()){
         this->top = new FifoElement(val);
     } else {
         FifoElement* last = this->top;
@@ -22,8 +52,19 @@ Fifo& Fifo::operator<<(const std::string& val){
     return *this;
 }
 
+Fifo& Fifo::operator<<(Fifo& src){
+    std::string temp;
+
+    while(!src.empty()){
+        src >> temp;
+        *this << temp;
+    }
+
+    return *this;
+}
+
 Fifo& Fifo::operator>>(std::string& output){
-    if (this->top == nullptr)
+    if (empty())
         throw new std::string("Fifo ist leer!");
 
     FifoElement* first = this->top;
@@ -36,7 +77,7 @@ Fifo& Fifo::operator>>(std::string& output){
 }
 
 Fifo::operator int () const{
-    if(this->top == nullptr){
+    if(empty()){
         return 0;
     } else {
         int counter {1};
@@ -49,7 +90,7 @@ Fifo::operator int () const{
     }
 }
 
-bool Fifo::empty(){
+bool Fifo::empty() const{
     return this->top == nullptr;
 }
 void Fifo::clear(){
@@ -60,3 +101,25 @@ void Fifo::clear(){
         delete first;
     }
 }
+
+std::string Fifo::concat(const std::string& sep){
+    std::stringstream ss;
+
+    FifoElement* curr = this->top;
+    if (curr != nullptr) {
+        ss << static_cast<std::string>(*curr);
+        curr = curr->GetNext();
+    }
+
+    while(curr != nullptr){
+        //top: FifoElement* -> FifoElement -> std::string
+        ss << sep << static_cast<std::string>(*curr);
+        curr = curr->GetNext();
+    }
+
+    return ss.str();
+}
+
+// "A", "B", "C"
+// sep = "|"
+// "A|B|C"
