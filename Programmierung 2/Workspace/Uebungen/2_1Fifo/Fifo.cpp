@@ -1,20 +1,14 @@
 #include "Fifo.h"
 #include "sstream"
 
-// int main() {
-//     Fifo f;
-//     f << "asdf";
-//     f << "dsda";
-//     f << "wasd";
-//     f << "rasd";
-
-//     Fifo b{f};
-
-//     b.clear();
-
-
-//     std::cout << f.concat() << std::endl;
-// }
+void Fifo::info(){
+    std::cout << "Test"<<std::endl;
+    // Fifo::element* next = this->top;
+    // while (next != nullptr){
+    //     std::cout << **next << std::endl;
+    //     next = ++*next;
+    // }
+}
 
 Fifo::Fifo(const Fifo& cpy){
     *this = cpy; //Verweis auf Zuweisungsoperator.
@@ -93,6 +87,7 @@ Fifo::operator int () const{
 bool Fifo::empty() const{
     return this->top == nullptr;
 }
+
 void Fifo::clear(){
     FifoElement* first;
     while(!empty()){
@@ -119,7 +114,3 @@ std::string Fifo::concat(const std::string& sep){
 
     return ss.str();
 }
-
-// "A", "B", "C"
-// sep = "|"
-// "A|B|C"

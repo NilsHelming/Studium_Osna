@@ -1,3 +1,4 @@
+#pragma once
 #include <string>
 #include <iostream>
 
@@ -41,11 +42,5 @@ public:
 };
 
 
-void Fifo::info(){
-    // Fifo::element* next = this->top;
-    // while (next != nullptr){
-    //     std::cout << **next << std::endl;
-    //     next = ++*next;
-    // }
-}
+
 // Workspace/Uebungen/2_1Fifo/FifoClassTest.exe Workspace/Uebungen/2_1Fifo/zitat.txt

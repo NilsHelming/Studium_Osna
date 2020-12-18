@@ -34,7 +34,7 @@ int main(int nParameter, char *parameter[]) {
         cout << "> Fifo aus Textdatei fuellen" << endl;
         {
             string token;
-            ifstream in("E:\\OneDrive\\Dokumente\\Studium_Osna\\Programmierung 2\\Workspace\\Uebungen\\2_1Fifo\\zitat.txt");
+            ifstream in("Workspace/Uebungen/FifoLuebberding/zitat");
             if (!in) throw "Kann Datei nicht oeffnen";
             while (1) {
                 in >> token;
@@ -54,8 +54,8 @@ int main(int nParameter, char *parameter[]) {
         cout << "> tiefe Kopie anlegen und zuweisen" << endl;
         Fifo kopie1(s);
         Fifo kopie2;
-        kopie2=s;
-        kopie2=kopie2;
+        kopie2 = s;
+        kopie2 = kopie2;
         kopie1 << "Four";
         kopie2.push("Five");
         cout << "> Fifo-Kopien ausgeben (die erste drei Werte muessen jeweils gleich sein)" << endl;
@@ -72,7 +72,7 @@ int main(int nParameter, char *parameter[]) {
         kopie1 >> help; cout << help << endl;
         cout << "Fifo sollte nun leer sein - tatsaechliche Anzahl der Elemente: " << kopie1.size() << endl;
         cout << "  kopie2:" << endl;
-        // kopie2.info();
+        //kopie2.info();
         cout << "Fifo sollte noch alle Elemente enthalten - tatsaechliche Anzahl der Elemente: " << kopie2.size() << endl;
 
     } catch (const char* error) {
@@ -80,7 +80,7 @@ int main(int nParameter, char *parameter[]) {
         cout << " >>> " << error << endl;
         return 3;
     } catch (...) {
-        cout << "> Failure: Unbekannte Ausnahme1" << endl;
+        cout << "> Failure: Unbekannte Ausnahme" << endl;
         return 3;
     }
 
@@ -96,7 +96,7 @@ int main(int nParameter, char *parameter[]) {
             cout << "> Erwartete Ausnahme wegen Fifo-Unterlauf:" << endl;
             cout << " >>> " << error << endl;
         } catch (...) {
-            cout << "> Failure: Unbekannte Ausnahme2" << endl;
+            cout << "> Failure: Unbekannte Ausnahme" << endl;
             return 3;
         }
         try {
@@ -112,10 +112,10 @@ int main(int nParameter, char *parameter[]) {
             cout << "> Erwartete Ausnahme wegen Fifo-Unterlauf:" << endl;
             cout << " >>> " << error << endl;
         } catch (...) {
-            cout << "> Failure: Unbekannte Ausnahme3" << endl;
+            cout << "> Failure: Unbekannte Ausnahme" << endl;
             return 3;
         }
     }
-    return 0;
+    return 1;
 
 }
