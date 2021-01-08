@@ -1,0 +1,309 @@
+\documentclass[]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{%
+	ngerman,
+	ae,
+	times,  %% hier kann man die Schriftart einstellen
+	graphicx,
+	url,
+	scrlayer-scrpage,
+	lastpage,
+	mathtools,
+	geometry,
+	multicol,
+	cancel,
+	xcolor,
+	nicematrix,
+	xfrac,
+	tikz,
+	pgfplots,
+	amsmath,
+	amssymb,
+	colortbl,
+	centernot,
+	dsfont,
+	textgreek,
+	icomma}
+\usepackage[thinlines]{easybmat}
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{datavisualization.formats.functions}
+\usetikzlibrary{intersections}
+\pgfplotsset{compat=1.17}
+\newcommand{\del}[1]{\cancel{~#1~}}
+\NiceMatrixOptions{ last-col,code-for-last-col = \color{blue}\scriptstyle,light-syntax}
+\newlength\dlf
+\newcommand\alignedhighlight[3]{
+  % #1 = color
+  % #2 = before alignment
+  % #3 = after alignment
+  &
+  \begingroup
+  \settowidth\dlf{$\displaystyle #2$}
+  \addtolength\dlf{\fboxsep+\fboxrule}
+  \hspace{-\dlf}
+  \fcolorbox{#1}{#1}{$\displaystyle #2 #3$}
+  \endgroup
+}
+\newcommand{\reference}[1]{ \text{\small{\textcolor{blue}{(#1)}}} }
+
+\newcommand{\topic}{Mathematik 1 f"ur Informatiker}
+\newcommand{\subtopic}{"Ubungsblatt 5}
+\newcommand{\authors}{Nils Helming}
+
+%Head and Footnotes
+\setlength{\headheight}{2.1\baselineskip} %baselineskip = minimum distance bbetween the bottom of one line to another.
+\geometry{bottom = 3cm}
+\setlength{\headsep}{\baselineskip}
+\ihead[\topic\hrule]{\topic\hrule}
+\chead[\subtopic\\~]{\subtopic\\~}
+\ohead[\authors\\~]{\authors\\~}
+\ifoot[~]{~}
+\cfoot[~]{~}
+\ofoot[Seite \thepage~von \pageref{LastPage}]{Seite \thepage~von \pageref{LastPage}}
+
+%Paragraph spacings
+\setlength{\parindent}{0em} %em = with of an 'M'
+\setlength{\parskip}{1ex} %ex = height of an 'x'
+
+
+\newcommand{\V}{\lor}
+\newcommand{\A}{\land}
+\newcommand{\T}[1]{\overline{#1}}
+\newcommand{\IT}[1]{\underline{\underline{#1}}}
+\newcommand{\eq}{\Leftrightarrow}
+\newcommand{\rarr}{\Rightarrow}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+\newcommand{\unit}[1]{\text{#1}}
+\newcommand{\fracunit}[2]{\frac{\unit{#1}}{\unit{#2}}}
+\newcommand{\textsq}[1]{\ensuremath{\text{#1}^2}}
+\newcommand{\textpow}[2]{\ensuremath{\text{#1}^{#2}}}
+\newcommand{\tdot}{\ensuremath{\cdot}}
+
+
+\begin{document}
+
+\section*{1. Aufgabe}
+\subsection*{a)}
+(i) Bestimme das Inverse von $\T{9}$ im $\mathbb{Z}_{25}$:
+\begin{align*}
+	ggT(9,25):&& 25&= 2 \cdot 9 + 7&&\\
+	&& 9&= 1 \cdot 7 + 2&&\\
+	&& 7&= 3 \cdot 2 + 1&&\rarr ggT(9,25) = 1 \rarr \text{Das Inverse existiert!}\\
+	&& 1&= 1 \cdot 1 + 0&&\text{Ende des euklidischen Algorithmus}\\
+	\\
+	\text{Lemma von Bézout:} && 1&= 7 - 3 \cdot 2 &&\\
+	&& &= 7 - 3 \cdot (9-1\cdot 7) &&\\
+	&& &= (-3) \cdot 9 + 4 \cdot 7&&\\
+	&& &= (-3) \cdot 9 + 4 \cdot (25-2\cdot 9)&&\\
+	&& &= 4 \cdot 25 - 11 \cdot 9&&\\
+	\\
+	\rarr&& \T{1}&= \T{4 \cdot 25 - 11 \cdot 9}&&\\
+	&& &= \T{4} \cdot \T{25} + \T{- 11} \cdot \T{9}&&\text{da $\T{25} = \T{0}$ im $\mathbb{Z}_{25}$}\\
+	&& &= \T{- 11} \cdot \T{9}&& \T{-11} = \T{14}\\
+	&& &= \T{14} \cdot \T{9}&&\\
+\end{align*}
+Aus $\T{1} = \T{14} \cdot \T{9}$ folgt, dass $\T{14}$ das Inverse zu $\T{9}$ im $\mathbb{Z}_{25}$ ist.
+
+(ii) Bestimme das Inverse von $\T{7}$ im $\mathbb{Z}_{25}$: $18$
+
+\newpage
+\section*{2. Aufgabe}
+\subsection*{a)}
+Bestimme das Inverse von $\T{16}$ im $\mathbb{Z}_{123}$:
+
+Errechne ggt(16,123), um zu bestimmen ob es ein Inverses zu 16 im Z123 gibt:
+\begin{align*}
+	ggT(16,123):&& 123&= 7 \cdot 16 + 11&&\\
+	&& 16&= 1 \cdot 11 + 5&&\\
+	&& 11&= 2 \cdot 5 + 1&&\rarr ggT(16,123) = 1 \rarr \text{Das Inverse existiert!}\\
+	&& 5&= 5 \cdot 1 + 0&&\text{Ende des euklidischen Algorithmus}\\
+	\\
+	\text{Lemma von Bézout:} && 1&= 11 - 2 \cdot 5 &&\\
+	&& &= 11 - 2 \cdot (16-1\cdot 11) &&\\
+	&& &= - 2 \cdot 16 - 1 \cdot 11&&\\
+	&& &= - 2 \cdot 16 - 1 \cdot (123 - 7 \cdot 16)&&\\
+	&& &= - 1 \cdot 123 + 5 \cdot 16&&\\
+	\\
+	\rarr&& \T{1}&= \T{- 1 \cdot 123 + 5 \cdot 16}&&\\
+	&& &= \T{- 1} \cdot \T{123} + \T{5} \cdot \T{16}&&\\
+	&& &= \T{5} \cdot \T{16}&&\text{da $\T{123} = \T{0}$ im $\mathbb{Z}_{123}$}\\
+\end{align*}
+Aus $\T{1} = \T{5} \cdot \T{16}$ folgt, dass $\T{5}$ das Inverse zu $\T{16}$ im $\mathbb{Z}_{123}$ ist.
+
+\subsection*{b)}
+Das Inverse von $\T{4}$ im $\mathbb{Z}_{11}$ bestimmen, um später den Gauß-Algorithmus zu vereinfachen:
+
+Da $\T{4} \cdot \T{3}= \T{4 \cdot 3} = \T{12} = \T{1}$ im $\mathbb{Z}_{11}$ gilt ist $\T{3}$ das Inverse zu $\T{4}$ im $\mathbb{Z}_{11}$!
+
+Im Gauß-Schema unter Anwendung des Gauß-Algorithmus ergibt sich dann:
+\begin{center}$\begin{BMAT}()[5pt,2cm,2cm]{lcc|cl}{c|cc|cc|cc|cc}
+	& x & y &   &\\
+	%
+	\red{\text{I:}}  & \T{4} & \T{9} & \T{5} & \red{\leftarrow \cdot~ \T{3}}\\
+	\red{\text{II:}} & \T{2} & \T{5} &\T{10} & \red{}\\
+	%
+	\red{\text{I:}}  & \T{1} & \T{5} & \T{4} & \red{\leftarrow \cdot~ \T{9}}\\
+	\red{\text{II:}} & \T{2} & \T{5} &\T{10} & \red{}\\
+	%
+	\red{\text{I:}}  & \T{9} & \T{1} & \T{3} & \red{}\\
+	\red{\text{II:}} & \T{2} & \T{5} &\T{10} & \red{\leftarrow +\text{I}}\\
+	%
+	\red{\text{I:}}  & \T{9} & \T{1} & \T{3} & \red{}\\
+	\red{\text{II:}} & \T{0} & \T{6} & \T{2} & \red{}\\
+\end{BMAT}$\end{center}
+\begin{align*}
+	\text{\red{II}:}&& \T{0}x + \T{6}y &= \T{2} &&\\
+	\eq&& \T{6}y &= \T{2} &&|\cdot \T{2}\\
+	\eq&& \T{12}y &= \T{4} &&\\
+	\eq&& \T{1}y &= \T{4} &&\\
+	\eq&& y &= \T{4} &&\\
+	\\
+	\text{\red{II}:}&& \T{4}x + \T{9}y &= \T{5} &&\\
+	\eq&& \T{4}x + \T{9}\cdot\T{4} &= \T{5} &&\\
+	\eq&& \T{4}x + \T{3} &= \T{5} &&|+ \T{8}\\
+	\eq&& \T{4}x + \T{11} &= \T{13} &&\\
+	\eq&& \T{4}x &= \T{2} &&|\cdot \T{3}\\
+	\eq&& \T{12}x &= \T{6} &&\\
+	\eq&& \T{1}x &= \T{6} &&\\
+	\eq&& x &= \T{6} &&\\
+\end{align*}
+Probe:
+\begin{align*}
+	&& \T{4}x + \T{9}y &= \T{4}\cdot \T{6} + \T{9}\cdot \T{4} &&\\
+	&& &= \T{24} + \T{36} &&\\
+	&& &= \T{60} &&\\
+	&& &= \T{5} &&\\
+	\\
+	&& \T{2}x + \T{5}y &= \T{2}\cdot \T{6} + \T{5}\cdot \T{4} &&\\
+	&& &= \T{12} + \T{20} &&\\
+	&& &= \T{32} &&\\
+	&& &= \T{10} &&\\
+\end{align*}
+
+\newpage
+\section*{3. Aufgabe}
+Zu lösen sind diese simulaten Kongruenzen:
+\begin{align*}
+	&& \T{x}&= \T{9} \text{ in } \mathbb{Z}_{17} &&\\
+	&& \T{x}&= \T{4} \text{ in } \mathbb{Z}_{7} &&\\
+\end{align*}
+Hierfür benötigen wir die Inversen $\T{a} \cdot \T{7} = \T{1}$ im $\mathbb{Z}_{17}$ und $\T{b} \cdot \T{17} = \T{1}$ im $\mathbb{Z}_{7}$. Beide sind durch Hingucken/Ausprobieren gefunden worden:
+\begin{align*}
+	&& \T{5} \cdot \T{7}&= \T{5 \cdot 7} &&\\
+	&& &= \T{35} &&\\
+	&& &= \T{1} &&\text{im } \mathbb{Z}_{17}\\
+	&& &\rarr a = 5&&\\
+	\\
+	&& \T{5} \cdot \T{17}&= \T{5} \cdot \T{3} &&\text{im } \mathbb{Z}_{7}\\
+	&& &= \T{5 \cdot 3} &&\\
+	&& &= \T{15} &&\\
+	&& &= \T{1} &&\text{im } \mathbb{Z}_{7}\\
+	&& &\rarr b = 5&&\\
+\end{align*}
+Und damit ergibt sich nach dem chinesischen Restsatz:
+\begin{align*}
+	&& x_0&= 9 \cdot a \cdot 7 + 4 \cdot b \cdot 17 &&\\
+	&& &= 9 \cdot 5 \cdot 7 + 4 \cdot 5 \cdot 17 &&\\
+	&& &= 315 + 340 &&\\
+	&& &= 655 &&\\
+\end{align*}
+Weitere Lösungen befinden sich in einem Abstand von $7 \cdot 17 = 119$ voneinander. Damit ist die kleinste Lösung also $x = 60$.
+
+\newpage
+\section*{5. Aufgabe}
+\begin{center}$\begin{BMAT}()[5pt,2cm,2cm]{lccc|cl}{c|ccc|ccc|ccc|ccc}
+	& x & y & z &   &\\
+	%
+	\red{\text{I:}}  & 3 & 1 & 1 & b & \red{\leftarrow \text{II}}\\
+	\red{\text{II:}} &-1 & 1 & 1 & 2 & \red{\leftarrow \text{III}}\\
+	\red{\text{III:}}& 1 & 3 & 3 &-2 & \red{\leftarrow \text{I}}\\
+	%
+	\red{\text{I:}}  &-1 & 1 & 1 & 2 & \red{}\\
+	\red{\text{II:}} & 1 & 3 & 3 &-2 & \red{\leftarrow +\text{I}}\\
+	\red{\text{III:}}& 3 & 1 & 1 & b & \red{\leftarrow +3\text{I}}\\
+	%
+	\red{\text{I:}}  &-1 & 1 & 1 & 2 & \red{}\\
+	\red{\text{II:}} & 0 & 4 & 4 & 0 & \red{}\\
+	\red{\text{III:}}& 0 & 4 & 4 &b+6& \red{\leftarrow -\text{II}}\\
+	%
+	\red{\text{I:}}  &-1 & 1 & 1 & 2 & \red{}\\
+	\red{\text{II:}} & 0 & 4 & 4 & 0 & \red{}\\
+	\red{\text{III:}}& 0 & 0 & 0 &b+6& \red{}\\
+\end{BMAT}$\end{center}
+Bei $b=-6$ gibt es hier also Lösungen, denn dann gilt $rg(\IT{A}) = rg(\IT{A}|b)$. Unter der Annahme $b = -6$ haben wir also $3$ Unbekannte und $rg(\IT{A}) = 2$, also wird ein freier Parameter $t = z$ benötigt:
+\begin{align*}
+	\text{\red{II}:}&& 0x + 4y + 4z &= 0 &&\\
+	\eq&& 4y &= -4z &&\\
+	&&  &= -4t &&\\
+	\rarr&&  y&= -t &&\\
+	\\
+	\text{\red{I}:}&& -1x + 1y + 1z &= 2 &&\\
+	\eq&& 1x &= 1y + 1z -2 &&\\
+	\eq&& 1x &= 1y + 1z -2 &&\\
+\end{align*}
+
+\newpage
+\section*{6. Aufgabe}
+
+\begin{center}$\begin{BMAT}()[5pt,2cm,2cm]{lcccc|cl}{c|cccc|cccc|cccc|cccc|cccc|cccc}
+	& x_1 & x_2 & x_3 & x_4 &  &\\
+	%
+	\red{\text{I:}}  & 1 &-3 & 2 & 2 & 1 & \red{}\\
+	\red{\text{II:}} & 4 & 1 &-6 &-3 & 2 & \red{\leftarrow -4\text{I}}\\
+	\red{\text{III:}}& 2 & 0 &-1 & 0 & 3 & \red{\leftarrow -2\text{I}}\\
+	\red{\text{IV:}} & 0 & 1 & 1 & 1 & 4 & \red{}\\
+	%
+	\red{\text{I:}}  & 1 &-3 & 2 & 2 & 1 & \red{}\\
+	\red{\text{II:}} & 0 &13 &-14&-11&-2 & \red{\leftarrow \text{IV}}\\
+	\red{\text{III:}}& 0 & 6 &-5 &-4 & 1 & \red{\leftarrow \text{II}}\\
+	\red{\text{IV:}} & 0 & 1 & 1 & 1 & 4 & \red{\leftarrow \text{III}}\\
+	%
+	\red{\text{I:}}  & 1 &-3 & 2 & 2 & 1 & \red{}\\
+	\red{\text{II:}} & 0 & 1 & 1 & 1 & 4 & \red{}\\
+	\red{\text{III:}}& 0 &13 &-14&-11&-2 & \red{\leftarrow -13\text{II}}\\
+	\red{\text{IV:}} & 0 & 6 &-5 &-4 & 1 & \red{\leftarrow -6\text{II}}\\
+	%
+	\red{\text{I:}}  & 1 &-3 & 2 & 2 & 1 & \red{}\\
+	\red{\text{II:}} & 0 & 1 & 1 & 1 & 4 & \red{}\\
+	\red{\text{III:}}& 0 & 0 &-27&-24&-54& \red{\leftarrow \cdot~ (-1/3)}\\
+	\red{\text{IV:}} & 0 & 0 &-11&-10&-23& \red{\leftarrow \cdot~ (-1)}\\
+	%
+	\red{\text{I:}}  & 1 &-3 & 2 & 2 & 1 & \red{}\\
+	\red{\text{II:}} & 0 & 1 & 1 & 1 & 4 & \red{}\\
+	\red{\text{III:}}& 0 & 0 & 9 & 8 &18 & \red{}\\
+	\red{\text{IV:}} & 0 & 0 & 11& 10& 23& \red{\leftarrow \cdot~ 9 - 11\text{III}}\\
+	%
+	\red{\text{I:}}  & 1 &-3 & 2 & 2 & 1 & \red{}\\
+	\red{\text{II:}} & 0 & 1 & 1 & 1 & 4 & \red{}\\
+	\red{\text{III:}}& 0 & 0 & 9 & 8 &18 & \red{}\\
+	\red{\text{IV:}} & 0 & 0 & 0 & 2 & 9 & \red{}\\
+\end{BMAT}$\end{center}
+Da $rg(\IT{A}) = 4 = rg(\IT{A}|b)$ folgt, dass wir keine freien Parameter benötigen und es definitiv eine Lösung gibt.
+\begin{align*}
+	\text{\red{IV}:}&& 0x_1 + 0x_2 + 0x_3 + 2x_4 &= 9 &&\\
+	\eq&& 2x_4 &= 9 &&\\
+	\eq&& x_4 &= 4,5 &&\\
+	\\
+	\text{\red{III}:}&& 0x_1 + 0x_2 + 9x_3 + 8x_4 &= 18 &&\\
+	\eq&& 9x_3 &= 18 - 8x_4&&\\
+	&& &= 18 - 36&&\\
+	&& &= -18&&\\
+	\eq&& x_3&= -2&&\\
+	\\
+	\text{\red{II}:}&& 0x_1 + 1x_2 + 1x_3 + 1x_4 &= 4 &&\\
+	\eq&& x_2 &= 4 - 1x_3 - 1x_4&&\\
+	&& &= 4 - (-2) - 4,5&&\\
+	&& &= 1,5&&\\
+	\\
+	\text{\red{I}:}&& 1x_1 - 3x_2 + 2x_3 + 2x_4 &= 1 &&\\
+	\eq&& x_1 &= 1 + 3x_2 - 2x_3 - 2x_4&&\\
+	&& &= 1 + 4,5 - (-4) - 9&&\\
+	&& &= 0,5&&\\
+\end{align*}
+Damit ergibt sich für dieses LGS diese Lösungsmenge:
+$ \mathbb{L} = \left\{\begin{pmatrix}x_1\\x_2\\x_3\\x_4 \end{pmatrix}\right\} = \left\{\begin{pmatrix}0,5\\1,5\\-2\\4,5 \end{pmatrix}\right\}$
+
+\end{document}
