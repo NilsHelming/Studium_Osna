@@ -1,7 +1,7 @@
 #include <string>
 #include <cmath>
 
-#include "Punkt.h"
+#include "Punkt3D.h"
 #include "Metrik3D.h"
 #include "GeoObjekt.h"
 #include "Ball.h"
@@ -36,9 +36,15 @@ Ball::~Ball(){
     delete this->metrik;
 }
 
-Ball& Ball::operator= (const Ball& src){
-    this->zentrum = src.zentrum;
-    this->radius = src.radius;
+Ball& Ball::assign(const GeoObjekt& rhs){
+    const Ball* lhs = dynamic_cast<const Ball*>(&rhs);
+    if (lhs == nullptr)
+        return *this;
+
+    this->GeoObjekt::assign(rhs);
+
+    this->zentrum = lhs->zentrum;
+    this->radius = lhs->radius;
     return *this;
 }
 
@@ -58,12 +64,3 @@ double Ball::inhalt() const{
 
     return std::pow(this->radius, 3) * pi * 4 / 3;
 }
-
-// double Rechteck::inhalt() const{
-//     double l = this->lu.x, o = this->ro.y, r = this->ro.x, u =this->lu.y;
-
-//     double a = this->metrik->abstand(Punkt2D(l,u), Punkt2D(l,o));
-//     double b = this->metrik->abstand(Punkt2D(l,o), Punkt2D(r,o));
-
-//     return a*b;
-// }

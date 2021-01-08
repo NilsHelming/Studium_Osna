@@ -1,4 +1,4 @@
-#include "Punkt.h"
+#include "Punkt2D.h"
 #include "Metrik2D.h"
 
 #include <cmath>

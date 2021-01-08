@@ -1,6 +1,6 @@
 #include <string>
 
-#include "Punkt.h"
+#include "Punkt2D.h"
 #include "Metrik2D.h"
 #include "GeoObjekt.h"
 #include "Rechteck.h"
@@ -29,9 +29,15 @@ Rechteck::~Rechteck(){
     delete this->metrik;
 }
 
-Rechteck& Rechteck::operator= (const Rechteck& src){
-    this->lu = src.lu;
-    this->ro = src.ro;
+Rechteck& Rechteck::assign(const GeoObjekt& rhs){
+    const Rechteck* lhs = dynamic_cast<const Rechteck*>(&rhs);
+    if (lhs == nullptr)
+        return *this;
+
+    GeoObjekt::assign(rhs);
+
+    this->lu = lhs->lu;
+    this->ro = lhs->ro;
     return *this;
 }
 

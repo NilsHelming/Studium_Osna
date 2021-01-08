@@ -1,4 +1,4 @@
-#include "Punkt.h"
+#include "Punkt3D.h"
 #include "Metrik3D.h"
 
 #include <cmath>
