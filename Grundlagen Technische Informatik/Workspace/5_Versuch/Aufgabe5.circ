@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project source="2.15.0" version="1.0">
+  This file is intended to be loaded by Logisim-evolution (https://github.com/reds-heig/logisim-evolution).
+
+  <lib desc="#Wiring" name="0"/>
+  <lib desc="#Gates" name="1"/>
+  <lib desc="#Plexers" name="2">
+    <tool name="Multiplexer">
+      <a name="enable" val="false"/>
+    </tool>
+    <tool name="Demultiplexer">
+      <a name="enable" val="false"/>
+    </tool>
+  </lib>
+  <lib desc="#Arithmetic" name="3"/>
+  <lib desc="#Memory" name="4">
+    <tool name="ROM">
+      <a name="contents">addr/data: 8 8
+0
+</a>
+    </tool>
+  </lib>
+  <lib desc="#I/O" name="5"/>
+  <lib desc="#TTL" name="6"/>
+  <lib desc="#HDL-IP" name="7">
+    <tool name="VHDL Entity">
+      <a name="content">--------------------------------------------------------------------------------&#13;
+-- HEIG-VD, institute REDS, 1400 Yverdon-les-Bains&#13;
+-- Project :&#13;
+-- File    :&#13;
+-- Autor   :&#13;
+-- Date    :&#13;
+--&#13;
+--------------------------------------------------------------------------------&#13;
+-- Description :&#13;
+--&#13;
+--------------------------------------------------------------------------------&#13;
+&#13;
+library ieee;&#13;
+  use ieee.std_logic_1164.all;&#13;
+  --use ieee.numeric_std.all;&#13;
+&#13;
+entity VHDL_Component is&#13;
+  port(&#13;
+  ------------------------------------------------------------------------------&#13;
+  --Insert input ports below&#13;
+    horloge_i  : in  std_logic;                    -- input bit example&#13;
+    val_i      : in  std_logic_vector(3 downto 0); -- input vector example&#13;
+  ------------------------------------------------------------------------------&#13;
+  --Insert output ports below&#13;
+    max_o      : out std_logic;                    -- output bit example&#13;
+    cpt_o      : out std_logic_vector(3 downto 0)  -- output vector example&#13;
+    );&#13;
+end VHDL_Component;&#13;
+&#13;
+--------------------------------------------------------------------------------&#13;
+--Complete your VHDL description below&#13;
+architecture type_architecture of VHDL_Component is&#13;
+&#13;
+&#13;
+begin&#13;
+&#13;
+&#13;
+end type_architecture;&#13;
+</a>
+    </tool>
+  </lib>
+  <lib desc="#TCL" name="8">
+    <tool name="TclGeneric">
+      <a name="content">library ieee;&#13;
+use ieee.std_logic_1164.all;&#13;
+&#13;
+entity TCL_Generic is&#13;
+  port(&#13;
+    --Insert input ports below&#13;
+    horloge_i  : in  std_logic;                    -- input bit example&#13;
+    val_i      : in  std_logic_vector(3 downto 0); -- input vector example&#13;
+&#13;
+	  --Insert output ports below&#13;
+    max_o      : out std_logic;                    -- output bit example&#13;
+    cpt_o      : out std_logic_Vector(3 downto 0)  -- output vector example&#13;
+  );&#13;
+end TCL_Generic;&#13;
+</a>
+    </tool>
+  </lib>
+  <lib desc="#Base" name="9">
+    <tool name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+  </lib>
+  <lib desc="#BFH-Praktika" name="10"/>
+  <lib desc="#Logisim ITA components" name="11"/>
+  <main name="Zaehler"/>
+  <options>
+    <a name="gateUndefined" val="ignore"/>
+    <a name="simlimit" val="1000"/>
+    <a name="simrand" val="0"/>
+    <a name="tickmain" val="half_period"/>
+  </options>
+  <mappings>
+    <tool lib="9" map="Button2" name="Menu Tool"/>
+    <tool lib="9" map="Button3" name="Menu Tool"/>
+    <tool lib="9" map="Ctrl Button1" name="Menu Tool"/>
+  </mappings>
+  <toolbar>
+    <tool lib="9" name="Poke Tool"/>
+    <tool lib="9" name="Edit Tool"/>
+    <tool lib="9" name="Text Tool">
+      <a name="text" val=""/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="center"/>
+      <a name="valign" val="base"/>
+    </tool>
+    <sep/>
+    <tool lib="0" name="Pin"/>
+    <tool lib="0" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+    </tool>
+    <tool lib="1" name="NOT Gate"/>
+    <tool lib="1" name="AND Gate"/>
+    <tool lib="1" name="OR Gate"/>
+  </toolbar>
+  <circuit name="Zaehler">
+    <a name="circuit" val="Zaehler"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif bold 16"/>
+    <a name="circuitnamedbox" val="true"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="circuitvhdlpath" val=""/>
+    <wire from="(140,60)" to="(140,70)"/>
+    <wire from="(310,70)" to="(360,70)"/>
+    <wire from="(290,170)" to="(290,180)"/>
+    <wire from="(330,170)" to="(330,180)"/>
+    <wire from="(290,130)" to="(290,150)"/>
+    <wire from="(300,20)" to="(300,40)"/>
+    <wire from="(310,230)" to="(310,250)"/>
+    <wire from="(270,70)" to="(270,90)"/>
+    <wire from="(320,160)" to="(320,180)"/>
+    <wire from="(300,160)" to="(300,180)"/>
+    <wire from="(370,130)" to="(370,150)"/>
+    <wire from="(80,130)" to="(120,130)"/>
+    <wire from="(80,90)" to="(120,90)"/>
+    <wire from="(140,70)" to="(180,70)"/>
+    <wire from="(270,130)" to="(270,160)"/>
+    <wire from="(190,170)" to="(290,170)"/>
+    <wire from="(120,20)" to="(150,20)"/>
+    <wire from="(200,150)" to="(290,150)"/>
+    <wire from="(190,130)" to="(190,170)"/>
+    <wire from="(290,130)" to="(300,130)"/>
+    <wire from="(370,130)" to="(380,130)"/>
+    <wire from="(290,150)" to="(370,150)"/>
+    <wire from="(140,60)" to="(150,60)"/>
+    <wire from="(200,40)" to="(210,40)"/>
+    <wire from="(300,40)" to="(300,90)"/>
+    <wire from="(380,40)" to="(380,90)"/>
+    <wire from="(120,20)" to="(120,90)"/>
+    <wire from="(230,60)" to="(230,70)"/>
+    <wire from="(310,60)" to="(310,70)"/>
+    <wire from="(360,70)" to="(360,90)"/>
+    <wire from="(120,130)" to="(120,150)"/>
+    <wire from="(180,70)" to="(180,90)"/>
+    <wire from="(200,130)" to="(200,150)"/>
+    <wire from="(210,20)" to="(210,40)"/>
+    <wire from="(330,170)" to="(440,170)"/>
+    <wire from="(230,70)" to="(270,70)"/>
+    <wire from="(360,130)" to="(360,160)"/>
+    <wire from="(320,160)" to="(360,160)"/>
+    <wire from="(210,20)" to="(240,20)"/>
+    <wire from="(270,160)" to="(300,160)"/>
+    <wire from="(300,20)" to="(320,20)"/>
+    <wire from="(440,130)" to="(440,170)"/>
+    <wire from="(120,150)" to="(200,150)"/>
+    <wire from="(210,40)" to="(210,90)"/>
+    <wire from="(300,130)" to="(310,130)"/>
+    <wire from="(310,60)" to="(320,60)"/>
+    <wire from="(290,40)" to="(300,40)"/>
+    <wire from="(370,40)" to="(380,40)"/>
+    <wire from="(180,130)" to="(190,130)"/>
+    <wire from="(200,130)" to="(210,130)"/>
+    <wire from="(230,60)" to="(240,60)"/>
+    <comp lib="9" loc="(4,80)" name="Text">
+      <a name="text" val="05.01.2021"/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="9" loc="(4,40)" name="Text">
+      <a name="text" val="Nabeel Elamaireh"/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="9" loc="(4,60)" name="Text">
+      <a name="text" val="Lukas Piening"/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="9" loc="(4,20)" name="Text">
+      <a name="text" val="Nils Helming"/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="9" loc="(318,216)" name="Text"/>
+    <comp lib="4" loc="(220,80)" name="T Flip-Flop"/>
+    <comp lib="0" loc="(80,130)" name="Pin">
+      <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="4" loc="(390,80)" name="T Flip-Flop"/>
+    <comp lib="4" loc="(310,80)" name="T Flip-Flop"/>
+    <comp lib="1" loc="(370,40)" name="AND Gate"/>
+    <comp lib="0" loc="(310,250)" name="Pin">
+      <a name="facing" val="north"/>
+      <a name="output" val="true"/>
+      <a name="label" val="TC"/>
+    </comp>
+    <comp lib="1" loc="(310,230)" name="AND Gate">
+      <a name="facing" val="south"/>
+      <a name="inputs" val="4"/>
+    </comp>
+    <comp lib="4" loc="(130,80)" name="T Flip-Flop"/>
+    <comp lib="1" loc="(200,40)" name="AND Gate"/>
+    <comp lib="0" loc="(80,90)" name="Power">
+      <a name="facing" val="west"/>
+    </comp>
+    <comp lib="1" loc="(290,40)" name="AND Gate"/>
+  </circuit>
+  <circuit name="Ampel">
+    <a name="circuit" val="Ampel"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif bold 16"/>
+    <a name="circuitnamedbox" val="true"/>
+    <a name="circuitnamedboxfixedsize" val="true"/>
+    <a name="circuitvhdlpath" val=""/>
+    <wire from="(290,340)" to="(350,340)"/>
+    <wire from="(370,120)" to="(370,190)"/>
+    <wire from="(140,210)" to="(140,280)"/>
+    <wire from="(340,40)" to="(390,40)"/>
+    <wire from="(370,190)" to="(370,210)"/>
+    <wire from="(370,420)" to="(370,500)"/>
+    <wire from="(370,120)" to="(480,120)"/>
+    <wire from="(80,110)" to="(120,110)"/>
+    <wire from="(370,20)" to="(370,120)"/>
+    <wire from="(370,320)" to="(370,420)"/>
+    <wire from="(120,160)" to="(150,160)"/>
+    <wire from="(220,420)" to="(220,460)"/>
+    <wire from="(220,340)" to="(220,380)"/>
+    <wire from="(130,120)" to="(150,120)"/>
+    <wire from="(210,400)" to="(230,400)"/>
+    <wire from="(470,70)" to="(480,70)"/>
+    <wire from="(470,170)" to="(480,170)"/>
+    <wire from="(220,460)" to="(230,460)"/>
+    <wire from="(220,340)" to="(230,340)"/>
+    <wire from="(350,70)" to="(350,120)"/>
+    <wire from="(210,120)" to="(350,120)"/>
+    <wire from="(370,210)" to="(370,260)"/>
+    <wire from="(350,150)" to="(350,340)"/>
+    <wire from="(390,360)" to="(390,480)"/>
+    <wire from="(390,40)" to="(390,300)"/>
+    <wire from="(120,40)" to="(120,110)"/>
+    <wire from="(390,20)" to="(390,40)"/>
+    <wire from="(390,480)" to="(390,500)"/>
+    <wire from="(280,360)" to="(390,360)"/>
+    <wire from="(290,480)" to="(390,480)"/>
+    <wire from="(290,300)" to="(390,300)"/>
+    <wire from="(130,120)" to="(130,400)"/>
+    <wire from="(350,120)" to="(350,150)"/>
+    <wire from="(120,160)" to="(120,250)"/>
+    <wire from="(370,190)" to="(410,190)"/>
+    <wire from="(130,400)" to="(160,400)"/>
+    <wire from="(280,320)" to="(370,320)"/>
+    <wire from="(120,250)" to="(150,250)"/>
+    <wire from="(210,210)" to="(370,210)"/>
+    <wire from="(350,70)" to="(440,70)"/>
+    <wire from="(140,280)" to="(230,280)"/>
+    <wire from="(350,340)" to="(350,380)"/>
+    <wire from="(120,110)" to="(120,160)"/>
+    <wire from="(290,420)" to="(370,420)"/>
+    <wire from="(140,210)" to="(150,210)"/>
+    <wire from="(290,260)" to="(370,260)"/>
+    <wire from="(210,420)" to="(220,420)"/>
+    <wire from="(210,380)" to="(220,380)"/>
+    <wire from="(350,20)" to="(350,70)"/>
+    <wire from="(350,440)" to="(350,500)"/>
+    <wire from="(350,380)" to="(350,440)"/>
+    <wire from="(370,260)" to="(370,320)"/>
+    <wire from="(390,300)" to="(390,360)"/>
+    <wire from="(280,380)" to="(350,380)"/>
+    <wire from="(280,440)" to="(350,440)"/>
+    <wire from="(350,150)" to="(420,150)"/>
+    <comp lib="9" loc="(4,20)" name="Text">
+      <a name="text" val="Nils Helming"/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="9" loc="(4,40)" name="Text">
+      <a name="text" val="Nabeel Elamaireh"/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="9" loc="(318,216)" name="Text"/>
+    <comp lib="9" loc="(4,80)" name="Text">
+      <a name="text" val="05.01.2021"/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="9" loc="(4,60)" name="Text">
+      <a name="text" val="Lukas Piening"/>
+      <a name="font" val="SansSerif plain 12"/>
+      <a name="halign" val="left"/>
+    </comp>
+    <comp lib="5" loc="(480,70)" name="LED">
+      <a name="color" val="#ff0000"/>
+      <a name="label" val="ROT"/>
+    </comp>
+    <comp lib="9" loc="(349,13)" name="Text">
+      <a name="text" val="Z1"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+    <comp lib="4" loc="(160,110)" name="D Flip-Flop">
+      <a name="label" val="Z1"/>
+    </comp>
+    <comp loc="(340,40)" name="Zaehler">
+      <a name="label" val="CTR"/>
+    </comp>
+    <comp lib="1" loc="(470,170)" name="AND Gate">
+      <a name="negate1" val="true"/>
+    </comp>
+    <comp lib="5" loc="(480,120)" name="LED">
+      <a name="color" val="#ffff00"/>
+      <a name="label" val="GELB"/>
+    </comp>
+    <comp lib="1" loc="(160,400)" name="OR Gate">
+      <a name="facing" val="west"/>
+      <a name="inputs" val="3"/>
+    </comp>
+    <comp lib="9" loc="(216,276)" name="Text">
+      <a name="text" val="Z0*"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+    <comp lib="4" loc="(160,200)" name="D Flip-Flop">
+      <a name="label" val="Z0"/>
+    </comp>
+    <comp lib="9" loc="(391,13)" name="Text">
+      <a name="text" val="TC"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+    <comp lib="5" loc="(480,170)" name="LED">
+      <a name="color" val="#00ff00"/>
+      <a name="label" val="GRUEN"/>
+    </comp>
+    <comp lib="9" loc="(147,394)" name="Text">
+      <a name="text" val="Z1*"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+    <comp lib="1" loc="(230,400)" name="AND Gate">
+      <a name="facing" val="west"/>
+      <a name="negate1" val="true"/>
+    </comp>
+    <comp lib="9" loc="(370,13)" name="Text">
+      <a name="text" val="Z0"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+    <comp lib="1" loc="(230,460)" name="AND Gate">
+      <a name="facing" val="west"/>
+      <a name="negate1" val="true"/>
+    </comp>
+    <comp lib="1" loc="(470,70)" name="NOT Gate"/>
+    <comp lib="1" loc="(230,280)" name="XOR Gate">
+      <a name="facing" val="west"/>
+    </comp>
+    <comp lib="1" loc="(230,340)" name="AND Gate">
+      <a name="facing" val="west"/>
+      <a name="inputs" val="3"/>
+      <a name="negate1" val="true"/>
+    </comp>
+    <comp lib="0" loc="(80,110)" name="Clock">
+      <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="9" loc="(349,519)" name="Text">
+      <a name="text" val="Z1"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+    <comp lib="9" loc="(391,519)" name="Text">
+      <a name="text" val="TC"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+    <comp lib="9" loc="(370,519)" name="Text">
+      <a name="text" val="Z0"/>
+      <a name="font" val="SansSerif plain 12"/>
+    </comp>
+  </circuit>
+</project>
