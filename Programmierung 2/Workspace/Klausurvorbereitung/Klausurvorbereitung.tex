@@ -1,0 +1,189 @@
+\documentclass[a5paper,landscape]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{%
+	ngerman,
+	ae,
+	times,  %% hier kann man die Schriftart einstellen
+	graphicx,
+	url,
+	scrlayer-scrpage,
+	lastpage,
+	mathtools,
+	geometry,
+	multicol,
+	cancel,
+	xcolor,
+	nicematrix,
+	xfrac,
+	tikz,
+	pgfplots,
+	amsmath,
+	colortbl,
+	centernot,
+	dsfont,
+	textgreek,
+	icomma,
+	pdfpages,
+	kvmap}
+\usepackage[thinlines]{easybmat}
+\usetikzlibrary{datavisualization}
+\usetikzlibrary{datavisualization.formats.functions}
+\usetikzlibrary{intersections}
+\pgfplotsset{compat=1.17}
+\newcommand{\del}[1]{\cancel{~#1~}}
+\NiceMatrixOptions{ last-col,code-for-last-col = \color{blue}\scriptstyle,light-syntax}
+\newlength\dlf
+\newcommand\alignedhighlight[3]{
+  % #1 = color
+  % #2 = before alignment
+  % #3 = after alignment
+  &
+  \begingroup
+  \settowidth\dlf{$\displaystyle #2$}
+  \addtolength\dlf{\fboxsep+\fboxrule}
+  \hspace{-\dlf}
+  \fcolorbox{#1}{#1}{$\displaystyle #2 #3$}
+  \endgroup
+}
+\newcommand{\reference}[1]{ \text{\small{\textcolor{blue}{(#1)}}} }
+
+\newcommand{\topic}{Grundlagen Technische Informatik}
+\newcommand{\subtopic}{Versuch 5}
+\newcommand{\authors}{Kleingruppe A2}
+
+%Head and Footnotes
+\setlength{\headheight}{2.1\baselineskip} %baselineskip = minimum distance bbetween the bottom of one line to another.
+\geometry{bottom = 3cm}
+\setlength{\headsep}{\baselineskip}
+\ihead[\topic\hrule]{\topic\hrule}
+\chead[\subtopic\\~]{\subtopic\\~}
+\ohead[\authors\\~]{\authors\\~}
+\ifoot[~]{~}
+\cfoot[~]{~}
+\ofoot[Seite \thepage~von \pageref{LastPage}]{Seite \thepage~von \pageref{LastPage}}
+
+%Paragraph spacings
+\setlength{\parindent}{0em} %em = with of an 'M'
+\setlength{\parskip}{1ex} %ex = height of an 'x'
+
+
+\newcommand{\V}{\lor}
+\newcommand{\A}{\land}
+\newcommand{\T}[1]{\overline{#1}}
+\newcommand{\eq}{\Leftrightarrow}
+\newcommand{\rarr}{\Rightarrow}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+\newcommand{\unit}[1]{\text{#1}}
+\newcommand{\fracunit}[2]{\frac{\unit{#1}}{\unit{#2}}}
+\newcommand{\textsq}[1]{\ensuremath{\text{#1}^2}}
+\newcommand{\textpow}[2]{\ensuremath{\text{#1}^{#2}}}
+\newcommand{\tdot}{\ensuremath{\cdot}}
+
+
+\begin{document}
+\includepdf[pages=2]{zz_Java2Cpp.pdf}
+\includepdf[pages=4]{zz_Java2Cpp.pdf}
+\includepdf[pages=5]{zz_Java2Cpp.pdf}
+\includepdf[pages=8]{zz_Java2Cpp.pdf}
+\includepdf[pages=9]{zz_Java2Cpp.pdf}
+\includepdf[pages=11]{zz_Java2Cpp.pdf}
+\includepdf[pages=14]{zz_Java2Cpp.pdf}
+\includepdf[pages=15]{zz_Java2Cpp.pdf}
+\includepdf[pages=17]{zz_Java2Cpp.pdf}
+\includepdf[pages=19]{zz_Java2Cpp.pdf}
+\includepdf[pages=21]{zz_Java2Cpp.pdf}
+\includepdf[pages=22]{zz_Java2Cpp.pdf}
+\includepdf[pages=23]{zz_Java2Cpp.pdf}
+\includepdf[pages=28]{zz_Java2Cpp.pdf}
+\includepdf[pages=30]{zz_Java2Cpp.pdf}
+\includepdf[pages=33]{zz_Java2Cpp.pdf}
+\includepdf[pages=43]{zz_Java2Cpp.pdf}
+\includepdf[pages=44]{zz_Java2Cpp.pdf}
+\includepdf[pages=47]{zz_Java2Cpp.pdf}
+\includepdf[pages=56]{zz_Java2Cpp.pdf}
+\includepdf[pages=59]{zz_Java2Cpp.pdf}
+\includepdf[pages=63]{zz_Java2Cpp.pdf}
+\includepdf[pages=66]{zz_Java2Cpp.pdf}
+\includepdf[pages=76]{zz_Java2Cpp.pdf}
+\includepdf[pages=91]{zz_Java2Cpp.pdf}
+\includepdf[pages=94]{zz_Java2Cpp.pdf}
+\includepdf[pages=96]{zz_Java2Cpp.pdf}
+\includepdf[pages=97]{zz_Java2Cpp.pdf}
+\includepdf[pages=98]{zz_Java2Cpp.pdf}
+\includepdf[pages=99]{zz_Java2Cpp.pdf}
+\includepdf[pages=100]{zz_Java2Cpp.pdf}
+\includepdf[pages=102]{zz_Java2Cpp.pdf}
+\includepdf[pages=108]{zz_Java2Cpp.pdf}
+\includepdf[pages=110]{zz_Java2Cpp.pdf}
+\includepdf[pages=112]{zz_Java2Cpp.pdf}
+\includepdf[pages=114]{zz_Java2Cpp.pdf}
+\includepdf[pages=116]{zz_Java2Cpp.pdf}
+\includepdf[pages=118]{zz_Java2Cpp.pdf}
+\includepdf[pages=119]{zz_Java2Cpp.pdf}
+\includepdf[pages=122]{zz_Java2Cpp.pdf}
+\includepdf[pages=124]{zz_Java2Cpp.pdf}
+\includepdf[pages=126]{zz_Java2Cpp.pdf}
+\includepdf[pages=127]{zz_Java2Cpp.pdf}
+\includepdf[pages=128]{zz_Java2Cpp.pdf}
+\includepdf[pages=129]{zz_Java2Cpp.pdf}
+\includepdf[pages=130]{zz_Java2Cpp.pdf}
+\includepdf[pages=131]{zz_Java2Cpp.pdf}
+\includepdf[pages=134]{zz_Java2Cpp.pdf}
+\includepdf[pages=135]{zz_Java2Cpp.pdf}
+\includepdf[pages=136]{zz_Java2Cpp.pdf}
+\includepdf[pages=137]{zz_Java2Cpp.pdf}
+\includepdf[pages=2]{zz_Zeiger.pdf}
+\includepdf[pages=8]{zz_Zeiger.pdf}
+\includepdf[pages=11]{zz_Zeiger.pdf}
+\includepdf[pages=12]{zz_Zeiger.pdf}
+\includepdf[pages=16]{zz_Zeiger.pdf}
+\includepdf[pages=18]{zz_Zeiger.pdf}
+\includepdf[pages=20]{zz_Zeiger.pdf}
+\includepdf[pages=21]{zz_Zeiger.pdf}
+\includepdf[pages=25]{zz_Zeiger.pdf}
+\includepdf[pages=27]{zz_Zeiger.pdf}
+\includepdf[pages=28]{zz_Zeiger.pdf}
+\includepdf[pages=31]{zz_Zeiger.pdf}
+\includepdf[pages=36]{zz_Zeiger.pdf}
+\includepdf[pages=38]{zz_Zeiger.pdf}
+\includepdf[pages=39]{zz_Zeiger.pdf}
+\includepdf[pages=40]{zz_Zeiger.pdf}
+\includepdf[pages=49]{zz_Zeiger.pdf}
+\includepdf[pages=50]{zz_Zeiger.pdf}
+\includepdf[pages=54]{zz_Zeiger.pdf}
+\includepdf[pages=62]{zz_Zeiger.pdf}
+\includepdf[pages=64]{zz_Zeiger.pdf}
+\includepdf[pages=66]{zz_Zeiger.pdf}
+\includepdf[pages=2]{zz_Vererbung.pdf}
+\includepdf[pages=1]{UML_Leipzig.pdf}
+\includepdf[pages=2]{UML_Leipzig.pdf}
+\includepdf[pages=3]{UML_Leipzig.pdf}
+\includepdf[pages=4]{UML_Leipzig.pdf}
+\includepdf[pages=5]{UML_Leipzig.pdf}
+\includepdf[pages=7]{zz_Vererbung.pdf}
+\includepdf[pages=13]{zz_Vererbung.pdf}
+\includepdf[pages=15]{zz_Vererbung.pdf}
+\includepdf[pages=16]{zz_Vererbung.pdf}
+\includepdf[pages=17]{zz_Vererbung.pdf}
+\includepdf[pages=19]{zz_Vererbung.pdf}
+\includepdf[pages=21]{zz_Vererbung.pdf}
+\includepdf[pages=22]{zz_Vererbung.pdf}
+\includepdf[pages=25]{zz_Vererbung.pdf}
+\includepdf[pages=33]{zz_Vererbung.pdf}
+\includepdf[pages=34]{zz_Vererbung.pdf}
+\includepdf[pages=43]{zz_Vererbung.pdf}
+\includepdf[pages=45]{zz_Vererbung.pdf}
+\includepdf[pages=46]{zz_Vererbung.pdf}
+\includepdf[pages=56]{zz_Vererbung.pdf}
+\includepdf[pages=58]{zz_Vererbung.pdf}
+\includepdf[pages=59]{zz_Vererbung.pdf}
+\includepdf[pages=61]{zz_Vererbung.pdf}
+\includepdf[pages=65]{zz_Vererbung.pdf}
+\includepdf[pages=67]{zz_Vererbung.pdf}
+\includepdf[pages=68]{zz_Vererbung.pdf}
+\includepdf[pages=69]{zz_Vererbung.pdf}
+\includepdf[pages=70]{zz_Vererbung.pdf}
+\end{document}

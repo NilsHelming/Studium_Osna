@@ -84,7 +84,174 @@
 
 
 \begin{document}
+\begin{center}$\begin{BMAT}()[5pt,2cm,2cm]{lccc|cl}{c|ccc|ccc|ccc|ccc}
+	& x & y & z &   &\\
+	%
+	\red{\text{I:}}  & 3 & 1 & 1 & b & \red{\leftarrow \text{II}}\\
+	\red{\text{II:}} &-1 & 1 & 1 & 2 & \red{\leftarrow \text{III}}\\
+	\red{\text{III:}}& 1 & 3 & 3 &-2 & \red{\leftarrow \text{I}}\\
+	%
+	\red{\text{I:}}  &-1 & 1 & 1 & 2 & \red{}\\
+	\red{\text{II:}} & 1 & 3 & 3 &-2 & \red{\leftarrow +\text{I}}\\
+	\red{\text{III:}}& 3 & 1 & 1 & b & \red{\leftarrow +3\text{I}}\\
+	%
+	\red{\text{I:}}  &-1 & 1 & 1 & 2 & \red{}\\
+	\red{\text{II:}} & 0 & 4 & 4 & 0 & \red{}\\
+	\red{\text{III:}}& 0 & 4 & 4 &b+6& \red{\leftarrow -\text{II}}\\
+	%
+	\red{\text{I:}}  &-1 & 1 & 1 & 2 & \red{}\\
+	\red{\text{II:}} & 0 & 4 & 4 & 0 & \red{}\\
+	\red{\text{III:}}& 0 & 0 & 0 &b+6& \red{}\\
+\end{BMAT}$\end{center}
 
-\section*{1. Aufgabe}
+$\begin{pmatrix}
+	1&2&3\\2&3&4
+\end{pmatrix}$
+\newpage
+\section*{6. Aufgabe}
+\subsection*{a)}
+
+$\vec{a}  = \begin{pmatrix}
+	-1\\1\\3
+\end{pmatrix}$\\
+$\vec{b}  = \begin{pmatrix}
+	2\\-1\\0
+\end{pmatrix}$\\
+$\vec{d}  = \begin{pmatrix}
+	1\\2\\3
+\end{pmatrix}$\\
+
+$\vec{c} = \vec{a} \times \vec{b} = \begin{pmatrix}-1\\1\\3\end{pmatrix} \times \begin{pmatrix}2\\-1\\0\end{pmatrix} = \begin{pmatrix}3\\6\\-1\end{pmatrix}$
+
+\begin{center}$\begin{BMAT}()[5pt,2cm,2cm]{lccc|cl}{c|ccc|ccc|ccc|ccc}
+	& \alpha & \beta & \gamma &   &\\
+	%
+	\red{\text{I:}}  & -1 & 2 & 3 & 1 & \red{}\\
+	\red{\text{II:}} &1 & -1 & 6 & 2 & \red{\leftarrow +\text{I}}\\
+	\red{\text{III:}}& 3 & 0 & -1 &3 & \red{\leftarrow +(3\cdot\text{I})}\\
+	%
+	\red{\text{I:}}  &-1 & 2 & 3 & 1 & \red{}\\
+	\red{\text{II:}} & 0 & 1 & 9 & 3 & \red{}\\
+	\red{\text{III:}}& 0 & 6 & 8 & 6 & \red{\leftarrow -(6\cdot\text{II})}\\
+	%
+	\red{\text{I:}}  &-1 & 2 & 3 & 1 & \red{}\\
+	\red{\text{II:}} & 0 & 1 & 9 & 3 & \red{}\\
+	\red{\text{III:}}& 0 & 0 &-46&-12& \red{\leftarrow :(-2)}\\
+	%
+	\red{\text{I:}}  &-1 & 2 & 3 & 1 & \red{}\\
+	\red{\text{II:}} & 0 & 1 & 9 & 3 & \red{}\\
+	\red{\text{III:}}& 0 & 0 & 23& 6 & \red{}\\
+\end{BMAT}$\end{center}
+\begin{align*}
+	\text{\red{III}:}&& 0\alpha + 0\beta + 23\gamma &= 6 &&\\
+	\eq&& \gamma &= \frac{6}{23} &&\\
+	\\
+	\text{\red{II}:}&& 0\alpha + 1\beta + 9\gamma &= 3 &&\\
+	\eq&& \beta + \frac{9 \cdot 6}{23} &= 3 &&\\
+	\eq&& \beta &= \frac{69}{23} - \frac{54}{23} &&\\
+	\eq&& \beta &= \frac{15}{23}&&\\
+	\\
+	\text{\red{I}:}&& -1\alpha + 2\beta + 3\gamma &= 1 &&\\
+	\eq&& -\alpha + \frac{2 \cdot 15}{23} + \frac{3 \cdot 6}{23} &= 1&&\\
+	\eq&& -\alpha &= \frac{23}{23} -\frac{30}{23} - \frac{18}{23}&&\\
+	\eq&& -\alpha &= -\frac{25}{23}&&\\
+	\eq&& \alpha &= \frac{25}{23}&&\\
+\end{align*}
+\subsection*{b)}
+$\vec{a}  = \begin{pmatrix}
+	-1\\1\\3
+\end{pmatrix}$\\
+$\vec{b}  = \begin{pmatrix}
+	0\\4\\1
+\end{pmatrix}$\\
+$\vec{c}  = \begin{pmatrix}
+	\alpha\\2\\3
+\end{pmatrix}$\\
+\newpage
+\begin{align*}
+	&& \begin{pmatrix}0\\0\\0\end{pmatrix} &= t_1 \cdot \vec{a} + t_2 \cdot \vec{b}+ t_3 \cdot \vec{c} &&\\
+	&&  &= t_1\cdot \begin{pmatrix}-1\\1\\3
+	\end{pmatrix} + t_2 \cdot \begin{pmatrix}0\\4\\1\end{pmatrix}+ t_3 \cdot \begin{pmatrix}\alpha\\2\\3\end{pmatrix} &&\\
+\end{align*}
+
+\begin{center}$\begin{BMAT}()[5pt,2cm,2cm]{lccc|cl}{c|ccc|ccc|ccc|ccc}
+	& t_1 & t_2 & t_3 &   &\\
+	%
+	\red{\text{I:}}  &-1 & 0 & \alpha & 0 & \red{\leftarrow \text{II}}\\
+	\red{\text{II:}} & 1 & 4 & 2 & 0 & \red{\leftarrow \text{III}}\\
+	\red{\text{III:}}& 3 & 1 & 3 & 0 & \red{\leftarrow \text{I}}\\
+	%
+	\red{\text{I:}} & 1 & 4 & 2 & 0 & \red{}\\
+	\red{\text{II:}}& 3 & 1 & 3 & 0 & \red{\leftarrow -(3\cdot\text{I})}\\
+	\red{\text{III:}}  &-1 & 0 & \alpha & 0 & \red{\leftarrow +\text{I}}\\
+	%
+	\red{\text{I:}}  & 1 & 4 & 2 & 0 & \red{}\\
+	\red{\text{II:}} & 0 &-11& -3 & 0 & \red{}\\
+	\red{\text{III:}}& 0 & 4 & \alpha+2 & 0 & \red{\leftarrow (11 \cdot \text{III}) + (4 \cdot \text{II})}\\
+	%
+	\red{\text{I:}}  & 1 & 4 & 2 & 0 & \red{}\\
+	\red{\text{II:}} & 0 &-11& -3 & 0 & \red{}\\
+	\red{\text{III:}}& 0 & 0 & 11\alpha+10 & 0 & \red{}\\
+\end{BMAT}$\end{center}
+
+Falls $11\alpha +10 \neq 0$ gilt, hätte dieses LGS eine einzige Lösung, nämlich $t_1=0, t_2 = 0, t_3 = 0$. Also wären die die Vektoren in diesem Fall linear unabhängig.
+
+Im Gegensatz, falls $11\alpha +10 = 0$, wären die Vektoren also linear abhängig. Also sind für $\alpha = -10/11$ die Vektoren linear abhängig.
+
+Probe:
+\begin{align*}
+	&& \begin{pmatrix}\frac{-10}{11}\\2\\3\end{pmatrix} &= t_1\cdot \begin{pmatrix}-1\\1\\3
+	\end{pmatrix} + t_2 \cdot \begin{pmatrix}0\\4\\1\end{pmatrix}  &&\\
+	&& \frac{-10}{11}&= -1t_1 &&\\
+	&& \frac{10}{11}&= t_1 &&\\
+	\\
+	&& 2&= 1t_1 + 4t_2 &&\\
+	&& \frac{12}{11}&= 4t_2 &&\\
+	&& \frac{3}{11}&= t_2 &&\\
+	\\
+	&& 3&= 3t_1 + 1t_2 &&\\
+	&& &= 3\frac{10}{11} + \frac{3}{11} &&\\
+	&& &= \frac{30}{11} + \frac{3}{11} &&\\
+	&& &= \frac{33}{11} &&\\
+\end{align*}
+\newpage
+\subsection*{c)}
+$\vec{a}  = \begin{pmatrix}
+	-1\\1\\3
+\end{pmatrix}$\\
+$\vec{b}  = \begin{pmatrix}
+	0\\4\\1
+\end{pmatrix}$\\
+$\vec{c}  = \begin{pmatrix}
+	1\\2\\3
+\end{pmatrix}$\\
+Aus b) wissen wir, dass $\{\vec{a},\vec{b},\vec{c}\}$ linear unabhängig sind, denn $1 \neq \frac{-10}{11}$
+
+$\vec{v} = \begin{pmatrix}
+	v_1\\v_2\\v_3
+\end{pmatrix} \in \mathbb{R}^3$
+
+$\vec{v} = \alpha\cdot\vec{a}+\beta\cdot\vec{b}+\gamma\cdot\vec{c}$
+
+\begin{center}$\begin{BMAT}()[5pt,2cm,2cm]{lccc|cl}{c|ccc}
+	& \alpha & \beta & \gamma &   &\\
+	%
+	\red{\text{I:}}  &-1 & 0 & 1 & v_1 & \red{}\\
+	\red{\text{II:}} & 1 & 4 & 2 & v_2 & \red{}\\
+	\red{\text{III:}}& 3 & 1 & 3 & v_3 & \red{}\\
+\end{BMAT}$\end{center}
+
+% $\IT{A}$
+
+% \begin{align*}
+% 	\text{\red{II}:}&& 0x + 4y + 4z &= 0 &&\\
+% 	\eq&& 4y &= -4z &&\\
+% 	&&  &= -4t &&\\
+% 	\rarr&&  y&= -t &&\\
+% 	\\
+% 	\text{\red{I}:}&& -1x + 1y + 1z &= 2 &&\\
+% 	\eq&& 1x &= 1y + 1z -2 &&\\
+% 	\eq&& 1x &= 1y + 1z -2 &&\\
+% \end{align*}
 
 \end{document}

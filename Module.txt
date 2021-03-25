@@ -10,7 +10,7 @@ Programmierung 2
 Anerkannt - Mathematik 2 (I) 7,5
 Kommunikationsnetze
 Anerkannt - Algorithmen und Datenstrukturen
-Anerkannt? - Rechnerorganisation
+Rechnerorganisation
 Orientierung und Methoden 2.Teil
 
 3. Semester
